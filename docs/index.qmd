@@ -1,0 +1,55 @@
+---
+title: "Construção de Algorítmos e <br> Programação"
+author: "Thiago Pires"
+title-slide-attributes:
+  data-background-image: cover.gif
+  data-background-position: cover
+format: 
+  live-revealjs:
+    theme: theme.scss
+    width: 1600
+    height: 900
+    footer: "[github.com/unasp-aulas/construir-algoritmos](https://github.com/unasp-aulas/construir-algoritmos)"
+html-math-method: mathjax
+code-annotations: hover
+execute: 
+  echo: true
+---
+
+# Introdução Python
+
+## Variáveis
+
+\
+
+Na programação, [variáveis]{.blue} são nomes que representam valores que podem ser manipulados durante a execução de um programa. Elas são elementos básicos, pois armazenam os dados que são necessários para o algoritmo.
+
+```{pyodide}
+# Tipo integer
+x = 7
+# Tipo string
+y = "a" 
+# Tipo float
+w = 5.6
+# Tipo bool
+z = True
+
+# Print da variável z
+print(z)
+```
+
+## Condições
+
+\
+
+[Condições]{.blue} na programação são expressões que podem ser verdadeiras ou falsas, e que são utilizadas para controlar o fluxo de execução de um programa
+
+```{pyodide}
+x = 6
+
+if x > 3:
+  print("x é maior do que 3")
+else:
+  print("x é menor ou igual 3")
+```
+
