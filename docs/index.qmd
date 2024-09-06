@@ -12,7 +12,6 @@ format:
     footer: "[github.com/unasp-aulas/construir-algoritmos](https://github.com/unasp-aulas/construir-algoritmos)"
 html-math-method: mathjax
 code-annotations: hover
-self-contained: true
 execute: 
   echo: true
 ---
