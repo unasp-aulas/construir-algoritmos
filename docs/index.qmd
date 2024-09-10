@@ -102,7 +102,7 @@ while x <= 5:
 \
 
 ### Exercício
-1. Reeconstrua a rotina para que ela acumule o produto da mesma sequência gerada
+1. Reconstrua a rotina para que ela acumule o produto da mesma sequência gerada
 :::
 ::: {.column width="48%"}
 ```{pyodide}
@@ -281,3 +281,16 @@ def cotar(data):
 
 [cotar(i) for i in ["09022024", "09012024", "08312024", "08302024", "08292024"]]
 ```
+
+## Monitoramento da frota de ônibus
+
+\
+
+A [API do Olho Vivo](https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/) provê informações em tempo real do monitoramento da frota de ônibus da cidade de São Paulo. Para ter acesso:
+
+\
+
+- [Crie uma conta](https://www.sptrans.com.br/desenvolvedores/cadastro-desenvolvedores/)
+- [Acesse seu perfil e crie um aplicativo](https://www.sptrans.com.br/desenvolvedores/perfil-desenvolvedor/)
+- [Leia a documentação para ver as possibilidades](https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/documentacao-api/)
+
