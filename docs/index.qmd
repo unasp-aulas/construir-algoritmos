@@ -13,6 +13,7 @@ format:
 html-math-method: mathjax
 code-annotations: hover
 embed-resources: false
+ipynb-shell-interactivity: all
 execute: 
   echo: true
 ---
@@ -29,15 +30,14 @@ execute:
 :::
 ::: {.column width="48%"}
 ```{pyodide}
-# Tipo integer
+# Tipo inteiro (int)
 x = 7
-# Tipo string
+# Tipo sequência de caracteres (str)
 y = "a" 
-# Tipo float
+# Tipo ponto flutuante (float)
 w = 5.6
-# Tipo bool
+# Tipo booleano (bool)
 z = True
-
 # Print da variável z
 print(z)
 ```
@@ -70,3 +70,214 @@ else:
 2. Use o `elif` para construir uma terceira condição
 :::
 ::::
+
+## Repetições
+
+\
+
+:::: columns
+::: {.column width="48%" .addspace}
+> São comandos que são utilizados na programação [quando se deseja [repetir]{.blue}, determinada parte do código]{.mark}, mais de uma vez. Ou seja, ao invés de escrevermos o mesmo código duas ou mais vezes, utilizamos uma estrutura de [repetição]{.blue}
+:::
+::: {.column width="48%"}
+```{pyodide}
+x = 1
+while x <= 5:
+  print(x)
+  x += 1
+```
+:::
+::::
+
+## Repetições
+
+\
+
+### Acumuladores
+
+:::: columns
+::: {.column width="48%" .addspace}
+> Um [acumulador]{.blue} é uma variável que acumula valores durante as iterações de um laço
+
+\
+
+### Exercício
+1. Reeconstrua a rotina para que ela acumule o produto da mesma sequência gerada
+:::
+::: {.column width="48%"}
+```{pyodide}
+x = 1
+soma = 0
+while x <= 5:
+  soma += x
+  x += 1
+print(f"Soma: {soma}")
+```
+:::
+::::
+
+## Estrutura de dados
+
+\
+
+> As e[struturas de dados]{.blue} servem para organizar, manipular e acessar dados em diversos formatos 
+
+\
+
+### Lista
+
+:::: columns
+::: {.column width="40%" .addspace}
+> Uma [lista]{.blue} é uma estrutura de dados que armazena uma sequência de valores, também chamados de elementos ou itens. Para extrair um elemento de uma lista pode usar a indexação numérica
+:::
+::: {.column width="56%"}
+```{pyodide}
+x = [1, 5, 3, "b", "a", [True, False]]
+# Retorna o sexto elemento da lista e o primeiro da lista aninhada
+x[5][0]
+```
+:::
+::::
+
+## Lista
+
+\
+
+### Utilizando `for`
+
+\
+
+:::: columns
+::: {.column width="45%" .addspace}
+O `for` é uma forma mais prática de trabalhar com repetições quando estamos operando sobre uma lista
+
+```{python}
+for i in [1, 2, 3, 4]:
+  print(i**2)
+```
+:::
+::: {.column width="51%"}
+
+Quando tanto a entrada quanto a saída é uma lista podemos reescrever o for no que chamamos de [list comprehention]{.blue}
+
+```{pyodide}
+[i**2 for i in [1, 2, 3, 4]]
+```
+:::
+::::
+
+# Aplicações
+
+## Consultando o endereço através do CEP
+
+<https://viacep.com.br/>
+
+\
+
+```{python}
+import requests
+
+# Função que fará requisição à API
+def consulta_cep(cep):
+  url = f"https://viacep.com.br/ws/{cep}/json/"
+  res = requests.get(url)
+  res = res.json()
+  return (res['logradouro'], res['uf'])
+
+# Lista de CEPs para consulta
+lista_cep = ["13186642",
+             "13178574",
+             "13188020",
+             "13184321",
+             "20720293"]
+
+[consulta_cep(cep)[0] for cep in lista_cep if consulta_cep(cep)[1] == "SP"]
+```
+
+## Consultado a cotação do Dólar
+
+<https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios>
+
+\
+
+```{python}
+import requests
+def cotar(data):
+  url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json"
+  res = requests.get(url)
+  res = res.json()
+  return res['value'][0]['cotacaoVenda']
+
+cotar("08282024")
+```
+
+\
+
+Esta função só funciona para dias úteis excluindo sábado domingo e feriado, como poderíamos modificar para que caso faça a cotação em um dia *não útil* a função traga a última cotação válida.
+
+## Consultado a cotação do Dólar
+
+\
+
+Para resolver este problema precisamos ententender como o Python lida com datas. É possível transformar uma string `"08122024"` em um tipo de dado `datetime`. O argumento `"%m%d%Y"` é para identificar como a estrutura da data está sendo recebida - mês, dia e ano 
+
+```{python}
+from datetime import datetime
+datetime.strptime("08122024", "%m%d%Y")
+```
+
+Convertendo a `str` em um tipo de dado `datetime` é possível fazer algumas manipulações que são apenas possíveis com este tipo. É possível descobrir qual o dia anterior à `"08122024"`
+
+```{pyodide}
+from datetime import datetime, timedelta
+datetime.strptime("08122024", "%m%d%Y") - timedelta(1)
+```
+
+## Consultado a cotação do Dólar
+
+\
+
+Para retornar de um tipo `datetime` para uma *string*, com a estrutura `"%m%d%Y"`,pode-se utilizar a função `strftime`
+
+```{python}
+from datetime import datetime, timedelta
+data = datetime.strptime("08122024", "%m%d%Y") - timedelta(1)
+datetime.strftime(data, "%m%d%Y") 
+```
+
+## Consultado a cotação do Dólar
+
+\
+
+Nos dias *não úteis* a API retorna uma lista vazia na chave `value`
+
+
+```{python}
+data = "09012024"
+
+url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json"
+res = requests.get(url)
+res = res.json()
+print(res)
+```
+
+## Consultado a cotação do Dólar
+
+\
+
+```{python}
+import requests
+
+def cotar(data):
+  url = fr"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$format=json"
+  res = requests.get(url)
+  res = res.json()
+  if res['value']: 
+    return res['value'][0]['cotacaoVenda']
+  else:
+    dia_anterior = datetime.strptime(data, "%m%d%Y") - timedelta(1)
+    dia_anterior = datetime.strftime(dia_anterior, "%m%d%Y")
+    return cotar(dia_anterior)
+
+[cotar(i) for i in ["09022024", "09012024", "08312024", "08302024", "08292024"]]
+```
