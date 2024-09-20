@@ -294,3 +294,75 @@ A [API do Olho Vivo](https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo
 - [Acesse seu perfil e crie um aplicativo](https://www.sptrans.com.br/desenvolvedores/perfil-desenvolvedor/)
 - [Leia a documentação para ver as possibilidades](https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/documentacao-api/)
 
+## Monitoramento de frota de ônibus
+
+\
+
+```{python}
+import os
+import requests
+from dotenv import load_dotenv
+
+load_dotenv("../.env")  # <1>
+
+s = requests.Session()  # <2>
+s.post( # <3>
+    f"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}" # <3>
+)  # <3>
+```
+
+1. Ler o arquivo tendo o token como variável de ambiente
+2. Persistir uma sessão após autenticar
+3. Fazer uma requisição com `post` incluindo o token
+
+## Monitoramento de frota de ônibus
+
+\
+
+```{python}
+linhas_lapa = s.get( # <1>
+    "http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa" # <1>
+)  # <1>
+linhas_lapa = linhas_lapa.json()
+linhas_lapa[:3]  # <2>
+```
+
+1. Utilizando o método `get` para requisitar as linhas de ônibus segundo a busca pelo termo "Lapa"
+2. Mostrando uma lista com a 3 primeitas linhas encontradas
+
+## Monitoramento de frota de ônibus
+
+\
+
+```{python}
+res = s.get( # <1>
+    "http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506" # <1>
+) # <1>
+paradas = res.json()
+paradas[:3]  # <2>
+```
+
+1. Requisição das paradas de ônibus com o nome, endereço e coordenada segundo o código da linha (as chaves `cl` na saída anterior)
+2. Lista com as informações das 3 primeiras paradas
+
+## Monitoramento de frota de ônibus
+
+\
+
+```{python}
+# | eval: false
+from folium import Map, Marker
+
+m = Map(location=[paradas[3]["py"], paradas[3]["px"]], zoom_start=14)
+for i in paradas:
+    Marker(location=[i["py"], i["px"]], popup=i["np"]).add_to(m)
+m.save("2506.html")
+```
+
+\
+
+<center>
+```{=html}
+<iframe width="900" height="400" src="2506.html"></iframe>
+```
+</center>
