@@ -1,6 +1,6 @@
 ---
 title: "Construção de Algorítmos e <br> Programação"
-author: "Thiago Pires"
+author: "Thiago Pires <br> --"
 title-slide-attributes:
   data-background-image: cover.gif
   data-background-position: cover
@@ -120,7 +120,7 @@ print(f"Soma: {soma}")
 
 \
 
-> As e[struturas de dados]{.blue} servem para organizar, manipular e acessar dados em diversos formatos 
+> As [estruturas de dados]{.blue} servem para organizar, manipular e acessar dados em diversos formatos 
 
 \
 
@@ -296,6 +296,8 @@ A [API do Olho Vivo](https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo
 
 ## Monitoramento de frota de ônibus
 
+### Autenticação
+
 \
 
 ```{python}
@@ -317,6 +319,8 @@ s.post( # <3>
 
 ## Monitoramento de frota de ônibus
 
+### Busca por linhas segundo termos
+
 \
 
 ```{python}
@@ -332,6 +336,8 @@ linhas_lapa[:3]  # <2>
 
 ## Monitoramento de frota de ônibus
 
+### Busca por paradas
+
 \
 
 ```{python}
@@ -346,6 +352,8 @@ paradas[:3]  # <2>
 2. Lista com as informações das 3 primeiras paradas
 
 ## Monitoramento de frota de ônibus
+
+### Paradas de ônibus no mapa
 
 \
 
@@ -363,6 +371,135 @@ m.save("2506.html")
 
 <center>
 ```{=html}
-<iframe width="900" height="400" src="2506.html"></iframe>
+<iframe width="900" height="350" src="2506.html"></iframe>
 ```
 </center>
+
+## Monitoramento de frota de ônibus
+
+### Posições em tempo real
+
+\
+
+```{python}
+#| eval: false
+pos = s.get(
+    "http://api.olhovivo.sptrans.com.br/v2.1//Posicao/Linha?codigoLinha=2506"
+)  # <1>
+pos.json()
+```
+
+1. Requisição da posição do ônibus segundo o código da linha informada
+
+```
+{'hr': '22:06',
+ 'vs': [{'p': '12783',
+   'a': True,
+   'ta': '2024-09-27T01:05:47Z',
+   'py': -23.53531725,
+   'px': -46.653005,
+   'sv': None,
+   'is': None},
+  {'p': '12534',
+   'a': True,
+   'ta': '2024-09-27T01:06:10Z',
+   'py': -23.547649,
+   'px': -46.641011500000005,
+   'sv': None,
+   'is': None},
+  {'p': '12592',
+   'a': True,
+   'ta': '2024-09-27T01:05:57Z',
+   'py': -23.5325365,
+   'px': -46.657965250000004,
+   'sv': None,
+   'is': None},
+  {'p': '12782',
+   'a': True,
+   'ta': '2024-09-27T01:05:45Z',
+   'py': -23.520449499999998,
+   'px': -46.6996115,
+   'sv': None,
+   'is': None}]}
+```
+
+## Bot no Telegram
+
+\
+
+:::: columns
+::: {.column}
+- Um bot poderá ser criado através de uma interação com o próprio bot do Telegram *BotFather* como mostrado na imagem
+- É necessário definir um nome, username e em seguida obter um token para ser utilizado nas requisições
+- Referência principal das APIs: <https://core.telegram.org/bots/api#available-methods>
+:::
+::: {.column}
+<center>
+![](BotFather.jpeg){width="50%"}
+</center>
+:::
+::::
+
+
+## Bot no Telegram
+
+### Obtendo updates
+
+\
+
+```{.python}
+import requests
+import os
+from dotenv import load_dotenv
+load_dotenv("../.env")
+updates = requests.get(f"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/getUpdates")
+updates = updates.json()
+updates["result"][-1]
+```
+
+```
+{'update_id': 80721953,
+ 'message': {'message_id': 9,
+  'from': {'id': 1042885840,
+   'is_bot': False,
+   'first_name': 'Thiago',
+   'last_name': 'Pires',
+   'username': 'th1460',
+   'language_code': 'pt-br'},
+  'chat': {'id': 1042885840,
+   'first_name': 'Thiago',
+   'last_name': 'Pires',
+   'username': 'th1460',
+   'type': 'private'},
+  'date': 1726967971,
+  'text': 'Oi'}}
+```
+
+## Bot no Telegram
+
+### Enviando mensagem
+
+\
+
+```{.python}
+requests.post(
+        url=f"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/sendMessage",
+        data={"chat_id": 1042885840, "text": "Olá tudo bem?"}
+    ).json()
+```
+
+```
+{'ok': True,
+ 'result': {'message_id': 10,
+  'from': {'id': 7627305412,
+   'is_bot': True,
+   'first_name': 'thop',
+   'username': 'th0pbot'},
+  'chat': {'id': 1042885840,
+   'first_name': 'Thiago',
+   'last_name': 'Pires',
+   'username': 'th1460',
+   'type': 'private'},
+  'date': 1726968004,
+  'text': 'Olá tudo bem?'}}
+```
