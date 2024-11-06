@@ -672,13 +672,20 @@ $$
 import numpy as np
 import pandas as pd
 from plotnine import (
-  ggplot, aes, geom_point, geom_smooth
+  ggplot, aes, geom_point, geom_smooth, geom_abline, theme, element_text
 )
 df = {"x": [-2, -2, -1, -1, 0, 0, 1, 1, 2, 2], "y": [0, 0, 2, 3, 4, 4, 5, 6, 8, 8]}
 (
   ggplot(pd.DataFrame(df), aes("x", "y"))
   + geom_point()
   + geom_smooth(method="lm", formula="y~x", se=False)
+  + geom_abline(intercept=4, slope=2.1)
+  + geom_abline(intercept=4.2, slope=2.3)
+  + geom_abline(intercept=3.7, slope=1.7)
+  + theme(text = element_text(
+        size = 22,
+        family = "IBM Plex Sans"
+    ))
 )
 ```
 :::
