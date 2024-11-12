@@ -691,3 +691,155 @@ df = {"x": [-2, -2, -1, -1, 0, 0, 1, 1, 2, 2], "y": [0, 0, 2, 3, 4, 4, 5, 6, 8, 
 :::
 :::
 
+## Exercício
+
+\
+
+Aplicar a fórmula matricial da regressão nos dados a seguir
+
+```{python}
+X = [-2, -2, -1, -1, 0, 0, 1, 1, 2, 2]
+y = [0, 0, 2, 3, 4, 4, 5, 6, 8, 8]
+```
+
+Os valores de `X` devem ser rearranjados para:
+
+```{python}
+X = [[1, -2], [1, -2], [1, -1], [1, -1], [1, 0], [1, 0], [1, 1], [1, 1], [1, 2], [1, 2]]
+```
+
+# Leitura e escrita de arquivos
+
+## Leitura de arquivos
+
+\
+
+```{python}
+#| eval: false
+arquivo = open("arquivo.txt", "r")
+conteudo = arquivo.read()
+print(conteudo)
+arquivo.close()
+```
+
+\
+
+```{python}
+#| eval: false
+arquivo = open("arquivo.txt", "r")
+texto = []
+while True:
+  linha = arquivo.readline()
+  if not linha:
+    break
+  texto.append(linha.rstrip("\n"))
+arquivo.close()
+```
+
+## Leitura de arquivos
+
+\
+
+A estutura `with` serve para fechar de forma automática o arquivo que foi aberto com a função `open`
+
+\
+
+```{python}
+#| eval: false
+with open("arquivo.txt", "r") as f:
+  conteudo = f.read()
+print(conteudo)
+```
+
+## Escrita de arquivos
+
+\
+
+```{python}
+#| eval: false
+with open("arquivo.txt", "w") as f:
+  f.write("olá mundo!")
+```
+
+## Escrita e leitura de arquivos com estruturas Python
+
+\
+
+### Escrita
+
+```{python}
+#| eval: false
+from pickle import dump
+data = {
+    'a': [1, 2.0, 3+4j],
+    'b': ("character string"),
+    'c': {None, True, False}
+}
+
+with open('data.pickle', 'wb') as f:
+  dump(data, f)
+```
+
+\
+
+### Leitura
+
+```{python}
+#| eval: false
+from pickle import load
+with open('data.pickle', 'rb') as f:
+  data = load(f)
+```
+
+# Recursividade
+
+> [Recursividade]{.blue} é um mecanismo de programação que permite que uma função ou objeto se refira a si mesmo. Em outras palavras, uma função recursiva é uma função que se define em termos de si mesma.
+
+## Fatorial
+
+\
+
+
+```{python}
+def factorial(n):
+  if n <= 1:
+    return 1
+  else:
+    return n * factorial(n - 1)
+
+factorial(5)
+```
+
+## Fibonacci
+
+\
+
+```{python}
+def fibonacci(n):
+  if n <= 1:
+    return 1
+  else:
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+fibonacci(7)
+```
+
+\
+
+```{python}
+[fibonacci(n) for n in range(8)]
+```
+
+## Soma acumulada
+
+\
+
+```{python}
+def cumsum(x):
+  if x < 0:
+    return 0
+  else:
+    return x + cumsum(x - 1)
+
+cumsum(5)
+```
