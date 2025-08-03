@@ -1,0 +1,268 @@
+[
+  {
+    "objectID": "docs/index.html#variáveis",
+    "href": "docs/index.html#variáveis",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Variáveis",
+    "text": "Variáveis\n\n\n\n\n\nNa programação, variáveis são nomes que representam valores que podem ser manipulados durante a execução de um programa. Elas são elementos básicos, pois armazenam os dados que são necessários para o algoritmo."
+  },
+  {
+    "objectID": "docs/index.html#condições",
+    "href": "docs/index.html#condições",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Condições",
+    "text": "Condições\n\n\n\nCondições na programação são expressões que podem ser verdadeiras ou falsas, e que são utilizadas para controlar o fluxo de execução de um programa.\n\n\n\n\n\n\n\n\n\n\n\n\nExercício:\n\nAltere o valor de x para que caia na condição alternativa.\nUse o elif para construir uma terceira condição"
+  },
+  {
+    "objectID": "docs/index.html#repetições",
+    "href": "docs/index.html#repetições",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Repetições",
+    "text": "Repetições\n\n\n\n\n\nSão comandos que são utilizados na programação quando se deseja repetir, determinada parte do código, mais de uma vez. Ou seja, ao invés de escrevermos o mesmo código duas ou mais vezes, utilizamos uma estrutura de repetição"
+  },
+  {
+    "objectID": "docs/index.html#repetições-1",
+    "href": "docs/index.html#repetições-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Repetições",
+    "text": "Repetições\n\n\nAcumuladores\n\n\n\nUm acumulador é uma variável que acumula valores durante as iterações de um laço\n\n\n\nExercício\n\nReconstrua a rotina para que ela acumule o produto da mesma sequência gerada"
+  },
+  {
+    "objectID": "docs/index.html#estrutura-de-dados",
+    "href": "docs/index.html#estrutura-de-dados",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Estrutura de dados",
+    "text": "Estrutura de dados\n\n\n\nAs estruturas de dados servem para organizar, manipular e acessar dados em diversos formatos\n\n\n\nLista\n\n\n\nUma lista é uma estrutura de dados que armazena uma sequência de valores, também chamados de elementos ou itens. Para extrair um elemento de uma lista pode usar a indexação numérica"
+  },
+  {
+    "objectID": "docs/index.html#lista-1",
+    "href": "docs/index.html#lista-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Lista",
+    "text": "Lista\n\n\nUtilizando for\n\n\n\n\nO for é uma forma mais prática de trabalhar com repetições quando estamos operando sobre uma lista\n\nfor i in [1, 2, 3, 4]:\n  print(i**2)\n\n1\n4\n9\n16\n\n\n\nQuando tanto a entrada quanto a saída é uma lista podemos reescrever o for no que chamamos de list comprehention"
+  },
+  {
+    "objectID": "docs/index.html#pesquisa-binária",
+    "href": "docs/index.html#pesquisa-binária",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Pesquisa binária",
+    "text": "Pesquisa binária\n\n\n\nA pesquisa binária é um algoritmo eficiente para encontrar um elemento em uma lista ordenada. Ela funciona dividindo repetidamente a lista ao meio e comparando o valor do meio com o valor que estamos procurando, descartando metade da lista a cada passo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n42 &gt; 23\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n42 &lt; 56\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n[3, 8, 15, 23, 42, 56, 78]\n\n\n\n\n\n\n\nPasso 1: Meio = 23\n\n\n\n\n\n\n\nDescarta metade esquerda\n\n\n\n\n\n\n\nNova lista [42, 56, 78]\n\n\n\n\n\n\n\nPasso 2: Meio = 56\n\n\n\n\n\n\n\nDescarta metade direita\n\n\n\n\n\n\n\nNova lista [42]\n\n\n\n\n\n\n\nPasso 3: Meio = 42\n\n\n\n\n\n\n\nEncontrado!"
+  },
+  {
+    "objectID": "docs/index.html#pesquisa-binária-1",
+    "href": "docs/index.html#pesquisa-binária-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Pesquisa binária",
+    "text": "Pesquisa binária\n\n\n\nComece com os índices do início e do fim da lista.\nEncontre o elemento do meio.\nCompare o valor do meio com o valor procurado:\n\n\nSe for igual, encontrou!\nSe o valor procurado for menor, repita a busca na metade esquerda.\nSe for maior, repita na metade direita.\n\n\nRepita até encontrar o valor ou até que a sublista esteja vazia.\n\n\ndef pesquisa_binaria(lista, item):\n  baixo = 0\n  alto = len(lista) - 1\n\n  while baixo &lt;= alto:\n    meio = (baixo + alto)/2\n    chute = lista[meio]\n    if chute == item:\n      return meio\n    if chute &gt; item:\n      alto = meio - 1\n    else:\n      baixo = meio + 1\n  return None"
+  },
+  {
+    "objectID": "docs/index.html#consultando-o-endereço-através-do-cep",
+    "href": "docs/index.html#consultando-o-endereço-através-do-cep",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Consultando o endereço através do CEP",
+    "text": "Consultando o endereço através do CEP\nhttps://viacep.com.br/\n\n\n\nimport requests\n\n# Função que fará requisição à API\ndef consulta_cep(cep):\n  url = f\"https://viacep.com.br/ws/{cep}/json/\"\n  res = requests.get(url)\n  res = res.json()\n  return (res['logradouro'], res['uf'])\n\n# Lista de CEPs para consulta\nlista_cep = [\"13186642\",\n             \"13178574\",\n             \"13188020\",\n             \"13184321\",\n             \"20720293\"]\n\n[consulta_cep(cep)[0] for cep in lista_cep if consulta_cep(cep)[1] == \"SP\"]\n\n['Rua Joaquim Marcelino Leite',\n 'Avenida Cabo Pedro Hoffman',\n 'Rua José de Anchieta',\n 'Rua Bernardino de Almeida']"
+  },
+  {
+    "objectID": "docs/index.html#consultado-a-cotação-do-dólar",
+    "href": "docs/index.html#consultado-a-cotação-do-dólar",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Consultado a cotação do Dólar",
+    "text": "Consultado a cotação do Dólar\nhttps://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios\n\n\n\nimport requests\ndef cotar(data):\n  url = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json\"\n  res = requests.get(url)\n  res = res.json()\n  return res['value'][0]['cotacaoVenda']\n\ncotar(\"08282024\")\n\n5.5315\n\n\n\n\nEsta função só funciona para dias úteis excluindo sábado domingo e feriado, como poderíamos modificar para que caso faça a cotação em um dia não útil a função traga a última cotação válida."
+  },
+  {
+    "objectID": "docs/index.html#consultado-a-cotação-do-dólar-1",
+    "href": "docs/index.html#consultado-a-cotação-do-dólar-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Consultado a cotação do Dólar",
+    "text": "Consultado a cotação do Dólar\n\n\nPara resolver este problema precisamos ententender como o Python lida com datas. É possível transformar uma string \"08122024\" em um tipo de dado datetime. O argumento \"%m%d%Y\" é para identificar como a estrutura da data está sendo recebida - mês, dia e ano\n\nfrom datetime import datetime\ndatetime.strptime(\"08122024\", \"%m%d%Y\")\n\ndatetime.datetime(2024, 8, 12, 0, 0)\n\n\nConvertendo a str em um tipo de dado datetime é possível fazer algumas manipulações que são apenas possíveis com este tipo. É possível descobrir qual o dia anterior à \"08122024\""
+  },
+  {
+    "objectID": "docs/index.html#consultado-a-cotação-do-dólar-2",
+    "href": "docs/index.html#consultado-a-cotação-do-dólar-2",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Consultado a cotação do Dólar",
+    "text": "Consultado a cotação do Dólar\n\n\nPara retornar de um tipo datetime para uma string, com a estrutura \"%m%d%Y\",pode-se utilizar a função strftime\n\nfrom datetime import datetime, timedelta\ndata = datetime.strptime(\"08122024\", \"%m%d%Y\") - timedelta(1)\ndatetime.strftime(data, \"%m%d%Y\") \n\n'08112024'"
+  },
+  {
+    "objectID": "docs/index.html#consultado-a-cotação-do-dólar-3",
+    "href": "docs/index.html#consultado-a-cotação-do-dólar-3",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Consultado a cotação do Dólar",
+    "text": "Consultado a cotação do Dólar\n\n\nNos dias não úteis a API retorna uma lista vazia na chave value\n\ndata = \"09012024\"\n\nurl = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json\"\nres = requests.get(url)\nres = res.json()\nprint(res)\n\n{'@odata.context': 'https://was-p.bcnet.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata$metadata#_CotacaoDolarDia', 'value': []}"
+  },
+  {
+    "objectID": "docs/index.html#consultado-a-cotação-do-dólar-4",
+    "href": "docs/index.html#consultado-a-cotação-do-dólar-4",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Consultado a cotação do Dólar",
+    "text": "Consultado a cotação do Dólar\n\n\n\nimport requests\n\ndef cotar(data):\n  url = fr\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$format=json\"\n  res = requests.get(url)\n  res = res.json()\n  if res['value']: \n    return res['value'][0]['cotacaoVenda']\n  else:\n    dia_anterior = datetime.strptime(data, \"%m%d%Y\") - timedelta(1)\n    dia_anterior = datetime.strftime(dia_anterior, \"%m%d%Y\")\n    return cotar(dia_anterior)\n\n[cotar(i) for i in [\"09022024\", \"09012024\", \"08312024\", \"08302024\", \"08292024\"]]\n\n[5.623, 5.6562, 5.6562, 5.6562, 5.6358]"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-da-frota-de-ônibus",
+    "href": "docs/index.html#monitoramento-da-frota-de-ônibus",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento da frota de ônibus",
+    "text": "Monitoramento da frota de ônibus\n\n\nA API do Olho Vivo provê informações em tempo real do monitoramento da frota de ônibus da cidade de São Paulo. Para ter acesso:\n\n\n\nCrie uma conta\nAcesse seu perfil e crie um aplicativo\nLeia a documentação para ver as possibilidades"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus",
+    "href": "docs/index.html#monitoramento-de-frota-de-ônibus",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento de frota de ônibus",
+    "text": "Monitoramento de frota de ônibus\nAutenticação\n\n\n\nimport os\nimport requests\nfrom dotenv import load_dotenv\n\n1load_dotenv(\"../.env\")\n\n2s = requests.Session()\n3s.post(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}\"\n)\n\n\n1\n\nLer o arquivo tendo o token como variável de ambiente\n\n2\n\nPersistir uma sessão após autenticar\n\n3\n\nFazer uma requisição com post incluindo o token\n\n\n\n\nTrue\n\n\n&lt;Response [200]&gt;"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-1",
+    "href": "docs/index.html#monitoramento-de-frota-de-ônibus-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento de frota de ônibus",
+    "text": "Monitoramento de frota de ônibus\nBusca por linhas segundo termos\n\n\n\n1linhas_lapa = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa\"\n)\nlinhas_lapa = linhas_lapa.json()\n2linhas_lapa[:3]\n\n\n1\n\nUtilizando o método get para requisitar as linhas de ônibus segundo a busca pelo termo “Lapa”\n\n2\n\nMostrando uma lista com a 3 primeitas linhas encontradas\n\n\n\n\n[{'cl': 841,\n  'lc': False,\n  'lt': '118Y',\n  'sl': 1,\n  'tl': 10,\n  'tp': 'LAPA',\n  'ts': 'LAUZANE PAULISTA'},\n {'cl': 33609,\n  'lc': False,\n  'lt': '118Y',\n  'sl': 2,\n  'tl': 10,\n  'tp': 'LAPA',\n  'ts': 'LAUZANE PAULISTA'},\n {'cl': 2273,\n  'lc': False,\n  'lt': '119L',\n  'sl': 1,\n  'tl': 10,\n  'tp': 'TERM. LAPA',\n  'ts': 'VL. SULINA'}]"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-2",
+    "href": "docs/index.html#monitoramento-de-frota-de-ônibus-2",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento de frota de ônibus",
+    "text": "Monitoramento de frota de ônibus\nBusca por paradas\n\n\n\n1res = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506\"\n)\nparadas = res.json()\n2paradas[:3]\n\n\n1\n\nRequisição das paradas de ônibus com o nome, endereço e coordenada segundo o código da linha (as chaves cl na saída anterior)\n\n2\n\nLista com as informações das 3 primeiras paradas\n\n\n\n\n[{'cp': 7014417,\n  'np': 'ANGELICA B/C',\n  'ed': 'AV   ANGELICA',\n  'py': -23.534564,\n  'px': -46.654302},\n {'cp': 60016784,\n  'np': 'PARADA PALMEIRAS B/C',\n  'ed': 'R PADRE ANTONIO TOMAS/ AV POMPEIA',\n  'py': -23.525799,\n  'px': -46.679251},\n {'cp': 60016786,\n  'np': 'ANTARTICA B/C',\n  'ed': 'PC SOUSA ARANHA/ VDTO ANTARTICA',\n  'py': -23.526523,\n  'px': -46.673588}]"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-3",
+    "href": "docs/index.html#monitoramento-de-frota-de-ônibus-3",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento de frota de ônibus",
+    "text": "Monitoramento de frota de ônibus\nParadas de ônibus no mapa\n\n\n\nfrom folium import Map, Marker\n\nm = Map(location=[paradas[3][\"py\"], paradas[3][\"px\"]], zoom_start=14)\nfor i in paradas:\n    Marker(location=[i[\"py\"], i[\"px\"]], popup=i[\"np\"]).add_to(m)\nm.save(\"2506.html\")"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-4",
+    "href": "docs/index.html#monitoramento-de-frota-de-ônibus-4",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento de frota de ônibus",
+    "text": "Monitoramento de frota de ônibus\nPosições em tempo real\n\n\n\npos = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1//Posicao/Linha?codigoLinha=2506\"\n1)\npos.json()\n\n\n1\n\nRequisição da posição do ônibus segundo o código da linha informada\n\n\n\n\n{'hr': '22:06',\n 'vs': [{'p': '12783',\n   'a': True,\n   'ta': '2024-09-27T01:05:47Z',\n   'py': -23.53531725,\n   'px': -46.653005,\n   'sv': None,\n   'is': None},\n  {'p': '12534',\n   'a': True,\n   'ta': '2024-09-27T01:06:10Z',\n   'py': -23.547649,\n   'px': -46.641011500000005,\n   'sv': None,\n   'is': None},\n  {'p': '12592',\n   'a': True,\n   'ta': '2024-09-27T01:05:57Z',\n   'py': -23.5325365,\n   'px': -46.657965250000004,\n   'sv': None,\n   'is': None},\n  {'p': '12782',\n   'a': True,\n   'ta': '2024-09-27T01:05:45Z',\n   'py': -23.520449499999998,\n   'px': -46.6996115,\n   'sv': None,\n   'is': None}]}"
+  },
+  {
+    "objectID": "docs/index.html#bot-no-telegram",
+    "href": "docs/index.html#bot-no-telegram",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Bot no Telegram",
+    "text": "Bot no Telegram\n\n\n\n\n\nUm bot poderá ser criado através de uma interação com o próprio bot do Telegram BotFather como mostrado na imagem\nÉ necessário definir um nome, username e em seguida obter um token para ser utilizado nas requisições\nReferência principal das APIs: https://core.telegram.org/bots/api#available-methods"
+  },
+  {
+    "objectID": "docs/index.html#bot-no-telegram-1",
+    "href": "docs/index.html#bot-no-telegram-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Bot no Telegram",
+    "text": "Bot no Telegram\nObtendo updates\n\n\nimport requests\nimport os\nfrom dotenv import load_dotenv\nload_dotenv(\"../.env\")\nupdates = requests.get(f\"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/getUpdates\")\nupdates = updates.json()\nupdates[\"result\"][-1]\n{'update_id': 80721953,\n 'message': {'message_id': 9,\n  'from': {'id': 1042885840,\n   'is_bot': False,\n   'first_name': 'Thiago',\n   'last_name': 'Pires',\n   'username': 'th1460',\n   'language_code': 'pt-br'},\n  'chat': {'id': 1042885840,\n   'first_name': 'Thiago',\n   'last_name': 'Pires',\n   'username': 'th1460',\n   'type': 'private'},\n  'date': 1726967971,\n  'text': 'Oi'}}"
+  },
+  {
+    "objectID": "docs/index.html#bot-no-telegram-2",
+    "href": "docs/index.html#bot-no-telegram-2",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Bot no Telegram",
+    "text": "Bot no Telegram\nEnviando mensagem\n\n\nrequests.post(\n        url=f\"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/sendMessage\",\n        data={\"chat_id\": 1042885840, \"text\": \"Olá tudo bem?\"}\n    ).json()\n{'ok': True,\n 'result': {'message_id': 10,\n  'from': {'id': 7627305412,\n   'is_bot': True,\n   'first_name': 'thop',\n   'username': 'th0pbot'},\n  'chat': {'id': 1042885840,\n   'first_name': 'Thiago',\n   'last_name': 'Pires',\n   'username': 'th1460',\n   'type': 'private'},\n  'date': 1726968004,\n  'text': 'Olá tudo bem?'}}"
+  },
+  {
+    "objectID": "docs/index.html#matrizes-1",
+    "href": "docs/index.html#matrizes-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Matrizes",
+    "text": "Matrizes\n\n\n\n\nMatriz é uma tabela organizada em linhas e colunas no formato \\(m\\times n\\), onde \\(m\\) representa o número de linhas (horizontal) e \\(n\\) o número de colunas (vertical).\n\n\nA função das matrizes é relacionar dados numéricos. Por isso, o conceito de matriz não é só importante na Matemática, mas também em outras áreas já que as matrizes têm diversas aplicações.\n\n\\[\nA = \\begin{bmatrix}\na_{11} & a_{12} & a_{13} \\\\\na_{21} & a_{22} & a_{23} \\\\\na_{31} & a_{32} & a_{33} \\\\\n\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "docs/index.html#matriz-em-python",
+    "href": "docs/index.html#matriz-em-python",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Matriz em python",
+    "text": "Matriz em python\n\n\nMatriz pode ser definida como uma lista de listas\n\n[[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\n[[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\n\n\n\nCriando uma matriz com list comprehension\n\nmatrix = [[column for column in range(4)] for row in range(4)]\nprint(matrix)\n\n[[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]]\n\n\n\n\nAcessando os valores de uma matrix\n\nmatrix[2][3]\n\n3"
+  },
+  {
+    "objectID": "docs/index.html#matrizes-com-numpy",
+    "href": "docs/index.html#matrizes-com-numpy",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Matrizes com numpy",
+    "text": "Matrizes com numpy\n\n\n\n\nNumPy é uma biblioteca Python usada para trabalhar com arrays.\n\n\n\nimport numpy as np\nA = np.array([[1, 2], [4, 5]])\nA\n\narray([[1, 2],\n       [4, 5]])\n\n\n\nB = np.array([[7, 8], [9, 10]])\nB\n\narray([[ 7,  8],\n       [ 9, 10]])\n\n\n\n\nSoma\n\n\nnp.add(A, B)\n\narray([[ 8, 10],\n       [13, 15]])\n\n\n\nMultiplicação\n\n\nnp.dot(A, B)\n\narray([[25, 28],\n       [73, 82]])\n\n\n\nTransposto\n\n\nnp.transpose(A)\n\narray([[1, 4],\n       [2, 5]])"
+  },
+  {
+    "objectID": "docs/index.html#calculando-o-inverso-de-uma-matriz",
+    "href": "docs/index.html#calculando-o-inverso-de-uma-matriz",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Calculando o inverso de uma matriz",
+    "text": "Calculando o inverso de uma matriz\n\n\n\nmatrix = np.array([[1, 2], [3, 4]])\nnp.linalg.inv(matrix)\n\narray([[-2. ,  1. ],\n       [ 1.5, -0.5]])"
+  },
+  {
+    "objectID": "docs/index.html#resolução-de-sistemas-lineares",
+    "href": "docs/index.html#resolução-de-sistemas-lineares",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Resolução de sistemas lineares",
+    "text": "Resolução de sistemas lineares\n\n\n\n\n\\[\n\\begin{cases}\nx_1 + 2x_2 = 5 \\\\\n3x_1 - 5x_2 = 4 \\\\\n\\end{cases}\n\\]\n\n\nForma matricial: \\[\nAx = b\n\\]\nA solução de um sistema linear pode ser encontrada através: \\[\nx = A^{-1}b\n\\]\n\n\nA = np.array([[1, 2], [3, -5]])\nb = np.array([5, 4])\nnp.dot(np.linalg.inv(A), b)\n\narray([3., 1.])"
+  },
+  {
+    "objectID": "docs/index.html#resolução-de-sistemas-lineares-1",
+    "href": "docs/index.html#resolução-de-sistemas-lineares-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Resolução de sistemas lineares",
+    "text": "Resolução de sistemas lineares\n\n\n\\[\n\\begin{cases}\n10x + 7y + 8z + 7w = 32\\\\\n7x + 5y + 6z + 5w = 23\\\\\n8x + 6y + 10z + 9w = 33\\\\\n7x + 5y + 9z + 10w = 31\\\\\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "docs/index.html#regressão-linear",
+    "href": "docs/index.html#regressão-linear",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Regressão linear",
+    "text": "Regressão linear\n\nA regressão linear é uma técnica estatística usada para prever o valor de uma variável com base no valor de outra variável. A variável que você deseja prever é chamada de variável dependente, e a variável que você está utilizando para prever o valor da outra variável é chamada de variável independente.\n\n\n\nA forma matricial para se resolver uma regressão linear\n\\[\n\\hat{\\beta} = (X'X)^{-1}X'y\n\\]"
+  },
+  {
+    "objectID": "docs/index.html#exercício-2",
+    "href": "docs/index.html#exercício-2",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Exercício",
+    "text": "Exercício\n\n\nAplicar a fórmula matricial da regressão nos dados a seguir\n\nX = [-2, -2, -1, -1, 0, 0, 1, 1, 2, 2]\ny = [0, 0, 2, 3, 4, 4, 5, 6, 8, 8]\n\nOs valores de X devem ser rearranjados para:\n\nX = [[1, -2], [1, -2], [1, -1], [1, -1], [1, 0], [1, 0], [1, 1], [1, 1], [1, 2], [1, 2]]"
+  },
+  {
+    "objectID": "docs/index.html#leitura-de-arquivos",
+    "href": "docs/index.html#leitura-de-arquivos",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Leitura de arquivos",
+    "text": "Leitura de arquivos\n\n\n\narquivo = open(\"arquivo.txt\", \"r\")\nconteudo = arquivo.read()\nprint(conteudo)\narquivo.close()\n\n\n\n\narquivo = open(\"arquivo.txt\", \"r\")\ntexto = []\nwhile True:\n  linha = arquivo.readline()\n  if not linha:\n    break\n  texto.append(linha.rstrip(\"\\n\"))\narquivo.close()"
+  },
+  {
+    "objectID": "docs/index.html#leitura-de-arquivos-1",
+    "href": "docs/index.html#leitura-de-arquivos-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Leitura de arquivos",
+    "text": "Leitura de arquivos\n\n\nA estutura with serve para fechar de forma automática o arquivo que foi aberto com a função open\n\n\n\nwith open(\"arquivo.txt\", \"r\") as f:\n  conteudo = f.read()\nprint(conteudo)"
+  },
+  {
+    "objectID": "docs/index.html#escrita-de-arquivos",
+    "href": "docs/index.html#escrita-de-arquivos",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Escrita de arquivos",
+    "text": "Escrita de arquivos\n\n\n\nwith open(\"arquivo.txt\", \"w\") as f:\n  f.write(\"olá mundo!\")"
+  },
+  {
+    "objectID": "docs/index.html#escrita-e-leitura-de-arquivos-com-estruturas-python",
+    "href": "docs/index.html#escrita-e-leitura-de-arquivos-com-estruturas-python",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Escrita e leitura de arquivos com estruturas Python",
+    "text": "Escrita e leitura de arquivos com estruturas Python\n\n\nEscrita\n\nfrom pickle import dump\ndata = {\n    'a': [1, 2.0, 3+4j],\n    'b': (\"character string\"),\n    'c': {None, True, False}\n}\n\nwith open('data.pickle', 'wb') as f:\n  dump(data, f)\n\n\n\nLeitura\n\nfrom pickle import load\nwith open('data.pickle', 'rb') as f:\n  data = load(f)"
+  },
+  {
+    "objectID": "docs/index.html#fatorial",
+    "href": "docs/index.html#fatorial",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Fatorial",
+    "text": "Fatorial\n\n\n\ndef factorial(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return n * factorial(n - 1)\n\nfactorial(5)\n\n120"
+  },
+  {
+    "objectID": "docs/index.html#fibonacci",
+    "href": "docs/index.html#fibonacci",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Fibonacci",
+    "text": "Fibonacci\n\n\n\ndef fibonacci(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return fibonacci(n - 1) + fibonacci(n - 2)\n\nfibonacci(7)\n\n21\n\n\n\n\n\n[fibonacci(n) for n in range(8)]\n\n[1, 1, 2, 3, 5, 8, 13, 21]"
+  },
+  {
+    "objectID": "docs/index.html#soma-acumulada",
+    "href": "docs/index.html#soma-acumulada",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Soma acumulada",
+    "text": "Soma acumulada\n\n\n\ndef cumsum(x):\n  if x &lt; 0:\n    return 0\n  else:\n    return x + cumsum(x - 1)\n\ncumsum(5)\n\n15"
+  }
+]
