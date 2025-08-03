@@ -10,6 +10,7 @@ format:
     width: 1600
     height: 900
     footer: "[github.com/unasp-aulas/construir-algoritmos](https://github.com/unasp-aulas/construir-algoritmos)"
+    mermaid-format: svg
 html-math-method: mathjax
 code-annotations: hover
 embed-resources: false
@@ -158,13 +159,74 @@ for i in [1, 2, 3, 4]:
 :::
 ::: {.column width="51%"}
 
-Quando tanto a entrada quanto a saída é uma lista podemos reescrever o for no que chamamos de [list comprehention]{.blue}
+Quando tanto a entrada quanto a saída é uma lista podemos reescrever o `for` no que chamamos de [list comprehention]{.blue}
 
 ```{pyodide}
 [i**2 for i in [1, 2, 3, 4]]
 ```
 :::
 ::::
+
+# Algoritmos
+> *Um algoritmo é um conjunto de instruções finitas para a realização de uma tarefa*.
+
+## Pesquisa binária
+
+::: {.columns}
+::: {.column}
+> A pesquisa binária é um algoritmo eficiente para encontrar um elemento em uma lista ordenada. Ela funciona dividindo repetidamente a lista ao meio e comparando o valor do meio com o valor que estamos procurando, descartando metade da lista a cada passo.
+:::
+::: {.column}
+<center>
+```{mermaid}
+%%| echo: false
+%%| fig-height: 8
+%%| fig-width: 10 
+graph TD
+    A["[3, 8, 15, 23, 42, 56, 78]"] --> B["Passo 1: Meio = 23"]
+    B -->|42 > 23| C["Descarta metade esquerda"]
+    C --> D["Nova lista [42, 56, 78]"]
+    D --> E["Passo 2: Meio = 56"]
+    E -->|42 < 56| F["Descarta metade direita"]
+    F --> G["Nova lista [42]"]
+    G --> H["Passo 3: Meio = 42"]
+    H --> I["Encontrado!"]
+```
+</center>
+:::
+:::
+
+## Pesquisa binária
+
+::: {.columns}
+::: {.column}
+1. Comece com os índices do início e do fim da lista.
+2. Encontre o elemento do meio.
+3. Compare o valor do meio com o valor procurado:
+  - Se for igual, encontrou!
+  - Se o valor procurado for menor, repita a busca na metade esquerda.
+  - Se for maior, repita na metade direita.
+4. Repita até encontrar o valor ou até que a sublista esteja vazia.
+:::
+::: {.column}
+```{.python}
+def pesquisa_binaria(lista, item):
+  baixo = 0
+  alto = len(lista) - 1
+
+  while baixo <= alto:
+    meio = (baixo + alto)/2
+    chute = lista[meio]
+    if chute == item:
+      return meio
+    if chute > item:
+      alto = meio - 1
+    else:
+      baixo = meio + 1
+  return None
+```
+:::
+:::
 
 # Aplicações
 
