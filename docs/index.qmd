@@ -117,15 +117,15 @@ print(f"Soma: {soma}")
 :::
 ::::
 
-## Estrutura de dados
+## Estrutura de dados[^1]
 
 \
 
-> As [estruturas de dados]{.blue} servem para organizar, manipular e acessar dados em diversos formatos 
+> As [estruturas de dados]{.blue} servem para organizar, manipular e acessar dados em diversos formatos
 
-\
+[^1]: Ver <https://docs.python.org/3/tutorial/datastructures.html>
 
-### Lista
+## Lista
 
 :::: columns
 ::: {.column width="40%" .addspace}
@@ -154,7 +154,7 @@ O `for` é uma forma mais prática de trabalhar com repetições quando estamos 
 
 ```{python}
 for i in [1, 2, 3, 4]:
-  print(i**2)
+    print(i**2)
 ```
 :::
 ::: {.column width="51%"}
@@ -166,6 +166,49 @@ Quando tanto a entrada quanto a saída é uma lista podemos reescrever o `for` n
 ```
 :::
 ::::
+
+## Tupla
+
+\
+
+> Uma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. [É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y)]{.mark}, e é representada por valores separados por vírgulas, geralmente entre parênteses. 
+
+```{python}
+# | error: true
+tupla = (1, 2, 3, 4, 5)
+tupla[3] = 2.9
+```
+
+## Dicionário
+
+\
+
+> Um dicionário Python é uma coleção de pares chave-valor, [onde cada chave é única e usada para acessar um valor específico, semelhante a um glossário.]{.mark} Diferente das listas, você não usa um índice numérico, mas sim uma chave para encontrar os dados. Os dicionários são mutáveis, permitindo adicionar, alterar ou remover elementos após sua criação. 
+
+```{python}
+dados = {"nome": "João", "idade": 45, "hobby": ["ler", "skate"], "estuda": True}
+dados["hobby"]
+```
+
+## Conjunto
+
+::: {.columns}
+::: {.column}
+> Um *set* (conjunto) é uma coleção não ordenada e mutável de elementos únicos. Ele remove automaticamente duplicados e é eficiente para operações como verificação de pertinência de um elemento ou a realização de operações matemáticas de conjuntos, como união ou interseção.
+:::
+::: {.column}
+```{python}
+A = {1, 2, 3}
+B = {3, 4, 5}
+A | B
+A & B
+A - B
+B - A
+A ^ B
+2 in A
+```
+:::
+:::
 
 # Algoritmos
 > *Um algoritmo é um conjunto de instruções finitas para a realização de uma tarefa*.
@@ -225,6 +268,70 @@ def pesquisa_binaria(lista, item):
       baixo = meio + 1
   return None
 ```
+:::
+:::
+
+## Ordenação por seleção
+
+::: {.columns}
+::: {.column}
+Suponha que você tenha um monte de músicas no seu computador. Para cada artista, você tem um contador de plays
+
+\
+
+Você quer ordenar uma lista de artistas, do artista mais tocado para o menos tocado, para que possa categorizar os seus artistas favoritos. Como pode fazer isso?
+
+> A ordenação por seleção é um algoritmo de ordenação simples que funciona selecionando repetidamente o menor elemento de uma lista não ordenada e movendo-o para o início da parte ordenada da lista.
+:::
+::: {.column}
+
+<center>
+| &#127925;            | Contador <br> de plays |
+|:--------------------:|:-----------------:|
+| Adoradores 5         | 95                |
+| Anthony Evans        | 78                |
+| Arautos do Rei       | 136               |
+| Avalon               | 111               |
+| Cain                 | 48                |
+| Grupo Versos         | 101               |
+| Novo Tom             | 58                |
+</center>
+:::
+:::
+
+## Ordenação por seleção
+
+\
+
+::: {.columns}
+::: {.column}
+```{.python}
+def buscaMenor(arr):
+  menor = arr[0] #<1>
+  menor_indice = 0 #<2>
+  for i in range(1, len(arr)):
+    if arr[i] < menor:
+      menor = arr[i]
+      menor_indice = i
+  return menor_indice
+```
+
+1. Armazena o menor valor.
+2. Armazena o índice do menor valor.
+
+:::
+::: {.column}
+```{.python}
+def ordenacaoporSelecao(arr): #<1>
+  novoArr = []
+  for i in range(len(arr)):
+    menor = buscaMenor(arr) #<2>
+    novoArr.append(arr.pop(menor))
+  return novoArr
+```
+
+1. Ordenação em um array.
+2. Encontra o menor elemento do array e adiciona ao novo array.
 :::
 :::
 
