@@ -28,18 +28,46 @@
     "text": "Repetições\n\n\nAcumuladores\n\n\n\nUm acumulador é uma variável que acumula valores durante as iterações de um laço\n\n\n\nExercício\n\nReconstrua a rotina para que ela acumule o produto da mesma sequência gerada"
   },
   {
-    "objectID": "docs/index.html#estrutura-de-dados",
-    "href": "docs/index.html#estrutura-de-dados",
+    "objectID": "docs/index.html#estrutura-de-dados1",
+    "href": "docs/index.html#estrutura-de-dados1",
     "title": "Construção de Algorítmos e  Programação",
-    "section": "Estrutura de dados",
-    "text": "Estrutura de dados\n\n\n\nAs estruturas de dados servem para organizar, manipular e acessar dados em diversos formatos\n\n\n\nLista\n\n\n\nUma lista é uma estrutura de dados que armazena uma sequência de valores, também chamados de elementos ou itens. Para extrair um elemento de uma lista pode usar a indexação numérica"
+    "section": "Estrutura de dados1",
+    "text": "Estrutura de dados1\n\n\n\nAs estruturas de dados servem para organizar, manipular e acessar dados em diversos formatos\n\nVer https://docs.python.org/3/tutorial/datastructures.html"
+  },
+  {
+    "objectID": "docs/index.html#lista",
+    "href": "docs/index.html#lista",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Lista",
+    "text": "Lista\n\n\n\nUma lista é uma estrutura de dados que armazena uma sequência de valores, também chamados de elementos ou itens. Para extrair um elemento de uma lista pode usar a indexação numérica"
   },
   {
     "objectID": "docs/index.html#lista-1",
     "href": "docs/index.html#lista-1",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Lista",
-    "text": "Lista\n\n\nUtilizando for\n\n\n\n\nO for é uma forma mais prática de trabalhar com repetições quando estamos operando sobre uma lista\n\nfor i in [1, 2, 3, 4]:\n  print(i**2)\n\n1\n4\n9\n16\n\n\n\nQuando tanto a entrada quanto a saída é uma lista podemos reescrever o for no que chamamos de list comprehention"
+    "text": "Lista\n\n\nUtilizando for\n\n\n\n\nO for é uma forma mais prática de trabalhar com repetições quando estamos operando sobre uma lista\n\nfor i in [1, 2, 3, 4]:\n    print(i**2)\n\n1\n4\n9\n16\n\n\n\nQuando tanto a entrada quanto a saída é uma lista podemos reescrever o for no que chamamos de list comprehention"
+  },
+  {
+    "objectID": "docs/index.html#tupla",
+    "href": "docs/index.html#tupla",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Tupla",
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[2], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+  },
+  {
+    "objectID": "docs/index.html#dicionário",
+    "href": "docs/index.html#dicionário",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Dicionário",
+    "text": "Dicionário\n\n\n\nUm dicionário Python é uma coleção de pares chave-valor, onde cada chave é única e usada para acessar um valor específico, semelhante a um glossário. Diferente das listas, você não usa um índice numérico, mas sim uma chave para encontrar os dados. Os dicionários são mutáveis, permitindo adicionar, alterar ou remover elementos após sua criação.\n\n\ndados = {\"nome\": \"João\", \"idade\": 45, \"hobby\": [\"ler\", \"skate\"], \"estuda\": True}\ndados[\"hobby\"]\n\n['ler', 'skate']"
+  },
+  {
+    "objectID": "docs/index.html#conjunto",
+    "href": "docs/index.html#conjunto",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Conjunto",
+    "text": "Conjunto\n\n\n\nUm set (conjunto) é uma coleção não ordenada e mutável de elementos únicos. Ele remove automaticamente duplicados e é eficiente para operações como verificação de pertinência de um elemento ou a realização de operações matemáticas de conjuntos, como união ou interseção.\n\n\n\nA = {1, 2, 3}\nB = {3, 4, 5}\nA | B\nA & B\nA - B\nB - A\nA ^ B\n2 in A\n\n{1, 2, 3, 4, 5}\n\n\n{3}\n\n\n{1, 2}\n\n\n{4, 5}\n\n\n{1, 2, 4, 5}\n\n\nTrue"
   },
   {
     "objectID": "docs/index.html#pesquisa-binária",
@@ -54,6 +82,20 @@
     "title": "Construção de Algorítmos e  Programação",
     "section": "Pesquisa binária",
     "text": "Pesquisa binária\n\n\n\nComece com os índices do início e do fim da lista.\nEncontre o elemento do meio.\nCompare o valor do meio com o valor procurado:\n\n\nSe for igual, encontrou!\nSe o valor procurado for menor, repita a busca na metade esquerda.\nSe for maior, repita na metade direita.\n\n\nRepita até encontrar o valor ou até que a sublista esteja vazia.\n\n\ndef pesquisa_binaria(lista, item):\n  baixo = 0\n  alto = len(lista) - 1\n\n  while baixo &lt;= alto:\n    meio = (baixo + alto)/2\n    chute = lista[meio]\n    if chute == item:\n      return meio\n    if chute &gt; item:\n      alto = meio - 1\n    else:\n      baixo = meio + 1\n  return None"
+  },
+  {
+    "objectID": "docs/index.html#ordenação-por-seleção",
+    "href": "docs/index.html#ordenação-por-seleção",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Ordenação por seleção",
+    "text": "Ordenação por seleção\n\n\nSuponha que você tenha um monte de músicas no seu computador. Para cada artista, você tem um contador de plays\n\n\nVocê quer ordenar uma lista de artistas, do artista mais tocado para o menos tocado, para que possa categorizar os seus artistas favoritos. Como pode fazer isso?\n\nA ordenação por seleção é um algoritmo de ordenação simples que funciona selecionando repetidamente o menor elemento de uma lista não ordenada e movendo-o para o início da parte ordenada da lista.\n\n\n\n\n\n\n🎵\nContador  de plays\n\n\n\n\nAdoradores 5\n95\n\n\nAnthony Evans\n78\n\n\nArautos do Rei\n136\n\n\nAvalon\n111\n\n\nCain\n48\n\n\nGrupo Versos\n101\n\n\nNovo Tom\n58"
+  },
+  {
+    "objectID": "docs/index.html#ordenação-por-seleção-1",
+    "href": "docs/index.html#ordenação-por-seleção-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Ordenação por seleção",
+    "text": "Ordenação por seleção\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array."
   },
   {
     "objectID": "docs/index.html#consultando-o-endereço-através-do-cep",
