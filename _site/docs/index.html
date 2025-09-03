@@ -308,8 +308,8 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieCA9IDFcbnNvbWEgPSAwXG53
 </div>
 </div></div>
 </section>
-<section id="estrutura-de-dados1" class="slide level2">
-<h2>Estrutura de dados<sup>1</sup></h2>
+<section id="estrutura-de-dados" class="slide level2">
+<h2>Estrutura de dados <sup>1</sup></h2>
 <p><br>
 </p>
 <blockquote>
@@ -344,7 +344,7 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoieCA9IFsxLCA1LCAzLCBcImJc
 <div class="columns">
 <div class="column addspace" style="width:45%;">
 <p>O <code>for</code> é uma forma mais prática de trabalhar com repetições quando estamos operando sobre uma lista</p>
-<div id="730ddd88" class="cell" data-execution_count="1">
+<div id="59046b72" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]:</span>
 <span id="cb1-2"><a></a>    <span class="bu">print</span>(i<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -373,14 +373,14 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiW2kqKjIgZm9yIGkgaW4gWzEs
 <blockquote>
 <p>Uma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. <mark>É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y)</mark>, e é representada por valores separados por vírgulas, geralmente entre parênteses.</p>
 </blockquote>
-<div id="79ebdba8" class="cell" data-execution_count="2">
+<div id="9193fcde" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>tupla <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
 <span id="cb3-2"><a></a>tupla[<span class="dv">3</span>] <span class="op">=</span> <span class="fl">2.9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[2], line 2</span>
+Cell <span class="ansi-green-fg">In[36], line 2</span>
 <span class="ansi-green-fg ansi-bold">      1</span> tupla <span style="color:rgb(98,98,98)">=</span> (<span style="color:rgb(98,98,98)">1</span>, <span style="color:rgb(98,98,98)">2</span>, <span style="color:rgb(98,98,98)">3</span>, <span style="color:rgb(98,98,98)">4</span>, <span style="color:rgb(98,98,98)">5</span>)
 <span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">tupla</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">3</span><span class="ansi-yellow-bg">]</span> <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(98,98,98)">2.9</span>
 
@@ -396,10 +396,10 @@ Cell <span class="ansi-green-fg">In[2], line 2</span>
 <blockquote>
 <p>Um dicionário Python é uma coleção de pares chave-valor, <mark>onde cada chave é única e usada para acessar um valor específico, semelhante a um glossário.</mark> Diferente das listas, você não usa um índice numérico, mas sim uma chave para encontrar os dados. Os dicionários são mutáveis, permitindo adicionar, alterar ou remover elementos após sua criação.</p>
 </blockquote>
-<div id="ef598090" class="cell" data-execution_count="3">
+<div id="18419407" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>dados <span class="op">=</span> {<span class="st">"nome"</span>: <span class="st">"João"</span>, <span class="st">"idade"</span>: <span class="dv">45</span>, <span class="st">"hobby"</span>: [<span class="st">"ler"</span>, <span class="st">"skate"</span>], <span class="st">"estuda"</span>: <span class="va">True</span>}</span>
 <span id="cb4-2"><a></a>dados[<span class="st">"hobby"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>['ler', 'skate']</code></pre>
 </div>
 </div>
@@ -412,7 +412,7 @@ Cell <span class="ansi-green-fg">In[2], line 2</span>
 <p>Um <em>set</em> (conjunto) é uma coleção não ordenada e mutável de elementos únicos. Ele remove automaticamente duplicados e é eficiente para operações como verificação de pertinência de um elemento ou a realização de operações matemáticas de conjuntos, como união ou interseção.</p>
 </blockquote>
 </div><div class="column">
-<div id="a587409e" class="cell" data-execution_count="4">
+<div id="a7f86a26" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>A <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}</span>
 <span id="cb6-2"><a></a>B <span class="op">=</span> {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}</span>
 <span id="cb6-3"><a></a>A <span class="op">|</span> B</span>
@@ -421,22 +421,22 @@ Cell <span class="ansi-green-fg">In[2], line 2</span>
 <span id="cb6-6"><a></a>B <span class="op">-</span> A</span>
 <span id="cb6-7"><a></a>A <span class="op">^</span> B</span>
 <span id="cb6-8"><a></a><span class="dv">2</span> <span class="kw">in</span> A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{1, 2, 3, 4, 5}</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{3}</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{1, 2}</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{4, 5}</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>{1, 2, 4, 5}</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>True</code></pre>
 </div>
 </div>
@@ -448,6 +448,25 @@ Cell <span class="ansi-green-fg">In[2], line 2</span>
 <blockquote>
 <p><em>Um algoritmo é um conjunto de instruções finitas para a realização de uma tarefa</em>.</p>
 </blockquote>
+</section>
+<section id="pesquisa-sequencial" class="slide level2">
+<h2>Pesquisa sequencial</h2>
+<p><br>
+</p>
+<p>Fazendo uma busca sequencial de um item dentro da lista.</p>
+<div id="32efc629" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> pesquisa_sequencial(lista, item):</span>
+<span id="cb13-2"><a></a>  <span class="cf">for</span> i, j <span class="kw">in</span> <span class="bu">enumerate</span>(lista):</span>
+<span id="cb13-3"><a></a>    <span class="cf">if</span> j <span class="op">==</span> item:</span>
+<span id="cb13-4"><a></a>      <span class="cf">return</span> i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Um exemplo</p>
+<div id="f3e88085" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>pesquisa_sequencial([<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">22</span>], <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>3</code></pre>
+</div>
+</div>
 </section>
 <section id="pesquisa-binária" class="slide level2">
 <h2>Pesquisa binária</h2>
@@ -465,7 +484,7 @@ Cell <span class="ansi-green-fg">In[2], line 2</span>
 <div>
 <svg aria-roledescription="flowchart-v2" role="graphics-document document" viewbox="0 0 267.484375 950" style="; display: block; margin: auto auto auto auto" class="flowchart" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-1" height="768">
 <style>#mermaid-figure-1{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-1 .error-icon{fill:#552222;}#mermaid-figure-1 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-1 .edge-thickness-normal{stroke-width:1px;}#mermaid-figure-1 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-1 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-1 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-figure-1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-1 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-1 .marker.cross{stroke:#333333;}#mermaid-figure-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-1 p{margin:0;}#mermaid-figure-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-figure-1 .cluster-label text{fill:#333;}#mermaid-figure-1 .cluster-label span{color:#333;}#mermaid-figure-1 .cluster-label span p{background-color:transparent;}#mermaid-figure-1 .label text,#mermaid-figure-1 span{fill:#333;color:#333;}#mermaid-figure-1 .node rect,#mermaid-figure-1 .node circle,#mermaid-figure-1 .node ellipse,#mermaid-figure-1 .node polygon,#mermaid-figure-1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-figure-1 .rough-node .label text,#mermaid-figure-1 .node .label text{text-anchor:middle;}#mermaid-figure-1 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-figure-1 .node .label{text-align:center;}#mermaid-figure-1 .node.clickable{cursor:pointer;}#mermaid-figure-1 .arrowheadPath{fill:#333333;}#mermaid-figure-1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-figure-1 .flowchart-link{stroke:#333333;fill:none;}#mermaid-figure-1 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-figure-1 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-figure-1 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-figure-1 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-figure-1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-figure-1 .cluster text{fill:#333;}#mermaid-figure-1 .cluster span{color:#333;}#mermaid-figure-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-figure-1 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
-<g><marker orient="auto" markerheight="8" markerwidth="8" markerunits="userSpaceOnUse" refy="5" refx="5" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755817704157_flowchart-v2-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerheight="8" markerwidth="8" markerunits="userSpaceOnUse" refy="5" refx="4.5" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755817704157_flowchart-v2-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="11" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755817704157_flowchart-v2-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="-1" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1755817704157_flowchart-v2-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="12" viewbox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1755817704157_flowchart-v2-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="-1" viewbox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1755817704157_flowchart-v2-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_A_B_0" d="M133.742,62L133.742,66.167C133.742,70.333,133.742,78.667,133.742,84.917C133.742,91.167,133.742,95.333,133.742,98.833C133.742,102.333,133.742,105.167,133.742,106.583L133.742,108"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_B_C_1" d="M133.742,166L133.742,172.167C133.742,178.333,133.742,190.667,133.742,199.917C133.742,209.167,133.742,215.333,133.742,220.833C133.742,226.333,133.742,231.167,133.742,233.583L133.742,236"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_C_D_2" d="M133.742,294L133.742,298.167C133.742,302.333,133.742,310.667,133.742,316.917C133.742,323.167,133.742,327.333,133.742,330.833C133.742,334.333,133.742,337.167,133.742,338.583L133.742,340"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_D_E_3" d="M133.742,398L133.742,402.167C133.742,406.333,133.742,414.667,133.742,420.917C133.742,427.167,133.742,431.333,133.742,434.833C133.742,438.333,133.742,441.167,133.742,442.583L133.742,444"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_E_F_4" d="M133.742,502L133.742,508.167C133.742,514.333,133.742,526.667,133.742,535.917C133.742,545.167,133.742,551.333,133.742,556.833C133.742,562.333,133.742,567.167,133.742,569.583L133.742,572"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_F_G_5" d="M133.742,630L133.742,634.167C133.742,638.333,133.742,646.667,133.742,652.917C133.742,659.167,133.742,663.333,133.742,666.833C133.742,670.333,133.742,673.167,133.742,674.583L133.742,676"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_G_H_6" d="M133.742,734L133.742,738.167C133.742,742.333,133.742,750.667,133.742,756.917C133.742,763.167,133.742,767.333,133.742,770.833C133.742,774.333,133.742,777.167,133.742,778.583L133.742,780"></path><path marker-end="url(#mermaid-1755817704157_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_H_I_7" d="M133.742,838L133.742,842.167C133.742,846.333,133.742,854.667,133.742,860.917C133.742,867.167,133.742,871.333,133.742,874.833C133.742,878.333,133.742,881.167,133.742,882.583L133.742,884"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
+<g><marker orient="auto" markerheight="8" markerwidth="8" markerunits="userSpaceOnUse" refy="5" refx="5" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1756933017221_flowchart-v2-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerheight="8" markerwidth="8" markerunits="userSpaceOnUse" refy="5" refx="4.5" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1756933017221_flowchart-v2-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="11" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1756933017221_flowchart-v2-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5" refx="-1" viewbox="0 0 10 10" class="marker flowchart-v2" id="mermaid-1756933017221_flowchart-v2-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="12" viewbox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1756933017221_flowchart-v2-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerheight="11" markerwidth="11" markerunits="userSpaceOnUse" refy="5.2" refx="-1" viewbox="0 0 11 11" class="marker cross flowchart-v2" id="mermaid-1756933017221_flowchart-v2-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_A_B_0" d="M133.742,62L133.742,66.167C133.742,70.333,133.742,78.667,133.742,84.917C133.742,91.167,133.742,95.333,133.742,98.833C133.742,102.333,133.742,105.167,133.742,106.583L133.742,108"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_B_C_1" d="M133.742,166L133.742,172.167C133.742,178.333,133.742,190.667,133.742,199.917C133.742,209.167,133.742,215.333,133.742,220.833C133.742,226.333,133.742,231.167,133.742,233.583L133.742,236"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_C_D_2" d="M133.742,294L133.742,298.167C133.742,302.333,133.742,310.667,133.742,316.917C133.742,323.167,133.742,327.333,133.742,330.833C133.742,334.333,133.742,337.167,133.742,338.583L133.742,340"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_D_E_3" d="M133.742,398L133.742,402.167C133.742,406.333,133.742,414.667,133.742,420.917C133.742,427.167,133.742,431.333,133.742,434.833C133.742,438.333,133.742,441.167,133.742,442.583L133.742,444"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_E_F_4" d="M133.742,502L133.742,508.167C133.742,514.333,133.742,526.667,133.742,535.917C133.742,545.167,133.742,551.333,133.742,556.833C133.742,562.333,133.742,567.167,133.742,569.583L133.742,572"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_F_G_5" d="M133.742,630L133.742,634.167C133.742,638.333,133.742,646.667,133.742,652.917C133.742,659.167,133.742,663.333,133.742,666.833C133.742,670.333,133.742,673.167,133.742,674.583L133.742,676"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_G_H_6" d="M133.742,734L133.742,738.167C133.742,742.333,133.742,750.667,133.742,756.917C133.742,763.167,133.742,767.333,133.742,770.833C133.742,774.333,133.742,777.167,133.742,778.583L133.742,780"></path><path marker-end="url(#mermaid-1756933017221_flowchart-v2-pointEnd)" style="" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" id="L_H_I_7" d="M133.742,838L133.742,842.167C133.742,846.333,133.742,854.667,133.742,860.917C133.742,867.167,133.742,871.333,133.742,874.833C133.742,878.333,133.742,881.167,133.742,882.583L133.742,884"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignobject height="0" width="0">
 <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" data-xmlns="http://www.w3.org/1999/xhtml">
 <span class="edgeLabel"></span>
 </div>
@@ -605,21 +624,71 @@ Encontrado!
 <li>Repita até encontrar o valor ou até que a sublista esteja vazia.</li>
 </ol>
 </div><div class="column">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> pesquisa_binaria(lista, item):</span>
-<span id="cb13-2"><a></a>  baixo <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-3"><a></a>  alto <span class="op">=</span> <span class="bu">len</span>(lista) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb13-4"><a></a></span>
-<span id="cb13-5"><a></a>  <span class="cf">while</span> baixo <span class="op">&lt;=</span> alto:</span>
-<span id="cb13-6"><a></a>    meio <span class="op">=</span> (baixo <span class="op">+</span> alto)<span class="op">/</span><span class="dv">2</span></span>
-<span id="cb13-7"><a></a>    chute <span class="op">=</span> lista[meio]</span>
-<span id="cb13-8"><a></a>    <span class="cf">if</span> chute <span class="op">==</span> item:</span>
-<span id="cb13-9"><a></a>      <span class="cf">return</span> meio</span>
-<span id="cb13-10"><a></a>    <span class="cf">if</span> chute <span class="op">&gt;</span> item:</span>
-<span id="cb13-11"><a></a>      alto <span class="op">=</span> meio <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb13-12"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb13-13"><a></a>      baixo <span class="op">=</span> meio <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb13-14"><a></a>  <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">def</span> pesquisa_binaria(lista, item):</span>
+<span id="cb16-2"><a></a>  baixo <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-3"><a></a>  alto <span class="op">=</span> <span class="bu">len</span>(lista) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb16-4"><a></a></span>
+<span id="cb16-5"><a></a>  <span class="cf">while</span> baixo <span class="op">&lt;=</span> alto:</span>
+<span id="cb16-6"><a></a>    meio <span class="op">=</span> (baixo <span class="op">+</span> alto) <span class="op">//</span> <span class="dv">2</span></span>
+<span id="cb16-7"><a></a>    chute <span class="op">=</span> lista[meio]</span>
+<span id="cb16-8"><a></a>    <span class="cf">if</span> chute <span class="op">==</span> item:</span>
+<span id="cb16-9"><a></a>      <span class="cf">return</span> meio</span>
+<span id="cb16-10"><a></a>    <span class="cf">elif</span> chute <span class="op">&gt;</span> item:</span>
+<span id="cb16-11"><a></a>      alto <span class="op">=</span> meio <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb16-12"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb16-13"><a></a>      baixo <span class="op">=</span> meio <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb16-14"><a></a>  <span class="cf">return</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
+</section>
+<section id="complexidade-de-tempo-do-algoritmo" class="slide level2">
+<h2>Complexidade de tempo do algoritmo</h2>
+<p><br>
+</p>
+<p>A complexidade <em>Big O</em> (ou notação assintótica) <mark>é uma forma de descrever o comportamento de um algoritmo em termos de tempo ou espaço conforme o tamanho da entrada cresce</mark>. <strong>Ela não mede o tempo exato de execução, mas sim como o tempo cresce com o aumento da entrada.</strong></p>
+<p><br>
+</p>
+<p>Imagine que você tem um algoritmo que precisa processar uma lista de números. <mark>A complexidade Big O te diz quantas operações/tentativas (aproximadamente) ele vai fazer à medida que a lista cresce.</mark></p>
+</section>
+<section id="complexidade-de-tempo-do-algoritmo-1" class="slide level2">
+<h2>Complexidade de tempo do algoritmo</h2>
+<p><br>
+</p>
+<p>Na pesquisa binária, a cada passo você divide a lista pela metade. Isso significa que o número de passos cresce logaritmicamente com o tamanho da lista ou <span class="math inline">\(O(log(n))\)</span>:</p>
+<ul>
+<li>Lista com 8 elementos → no máximo 3 passos (porque <span class="math inline">\(log_2 8 = 3\)</span>)</li>
+<li>Lista com 1000000 elementos → no máximo 20 passos (porque <span class="math inline">\(log_2 1000000 \approx 20\)</span>)</li>
+</ul>
+<p><br>
+</p>
+<p>Na pesquisa sequencial, o número de tentativas é igual ao número de elementos na lista <span class="math inline">\(O(n)\)</span></p>
+<ul>
+<li>Lista com 8 elementos → no máximo 8 passos</li>
+<li>Lista com 1000000 elementos → no máximo 1000000 passos</li>
+</ul>
+</section>
+<section id="exercícios-com-pesquisa-binária" class="slide level2">
+<h2>Exercícios com pesquisa binária</h2>
+<p><br>
+</p>
+<ol type="1">
+<li>Quantos números primos são menores que 67</li>
+</ol>
+<pre><code>primos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]</code></pre>
+<ol start="2" type="1">
+<li>Qual o nome associado ao número 256</li>
+</ol>
+<pre><code>lista = [
+    (3, 'Ana'), (10, 'Bruno'), (15, 'Carlos'), (18, 'Daniela'), (19, 'Eduardo'),
+    (28, 'Fernanda'), (33, 'Gustavo'), (35, 'Helena'), (43, 'Igor'), (48, 'Juliana'),
+    (58, 'Kleber'), (83, 'Larissa'), (84, 'Marcos'), (86, 'Natália'), (97, 'Otávio'),
+    (104, 'Patrícia'), (106, 'Rafael'), (115, 'Sabrina'), (120, 'Tiago'), (122, 'Vanessa'),
+    (127, 'Amanda'), (143, 'Breno'), (147, 'Camila'), (149, 'Diego'), (151, 'Eliane'),
+    (175, 'Fabiano'), (179, 'Gabriela'), (184, 'Henrique'), (187, 'Isabela'), (194, 'João'),
+    (199, 'Karen'), (201, 'Leonardo'), (211, 'Mirela'), (213, 'Nicolas'), (232, 'Olívia'),
+    (241, 'Pedro'), (244, 'Queila'), (246, 'Rodrigo'), (256, 'Simone'), (258, 'Túlio'),
+    (259, 'Ursula'), (261, 'Victor'), (269, 'Wesley'), (273, 'Xênia'), (278, 'Yasmin'),
+    (280, 'Zeca'), (288, 'Alana'), (291, 'Caio'), (292, 'Diana'), (294, 'Fábio')
+]</code></pre>
 </section>
 <section id="ordenação-por-seleção" class="slide level2">
 <h2>Ordenação por seleção</h2>
@@ -681,42 +750,151 @@ Encontrado!
 </p>
 <div class="columns">
 <div class="column">
-<div class="sourceCode" id="annotated-cell-46"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-46-1"><a href="#annotated-cell-46-1"></a><span class="kw">def</span> buscaMenor(arr):</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-46" data-target-annotation="1">1</button><span id="annotated-cell-46-2" class="code-annotation-target"><a href="#annotated-cell-46-2"></a>  menor <span class="op">=</span> arr[<span class="dv">0</span>]</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-46" data-target-annotation="2">2</button><span id="annotated-cell-46-3" class="code-annotation-target"><a href="#annotated-cell-46-3"></a>  menor_indice <span class="op">=</span> <span class="dv">0</span></span>
-<span id="annotated-cell-46-4"><a href="#annotated-cell-46-4"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(arr)):</span>
-<span id="annotated-cell-46-5"><a href="#annotated-cell-46-5"></a>    <span class="cf">if</span> arr[i] <span class="op">&lt;</span> menor:</span>
-<span id="annotated-cell-46-6"><a href="#annotated-cell-46-6"></a>      menor <span class="op">=</span> arr[i]</span>
-<span id="annotated-cell-46-7"><a href="#annotated-cell-46-7"></a>      menor_indice <span class="op">=</span> i</span>
-<span id="annotated-cell-46-8"><a href="#annotated-cell-46-8"></a>  <span class="cf">return</span> menor_indice</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a02300a3" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="annotated-cell-52"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-52-1"><a href="#annotated-cell-52-1"></a><span class="kw">def</span> buscaMenor(arr):</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-52" data-target-annotation="1">1</button><span id="annotated-cell-52-2" class="code-annotation-target"><a href="#annotated-cell-52-2"></a>  menor <span class="op">=</span> arr[<span class="dv">0</span>]</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-52" data-target-annotation="2">2</button><span id="annotated-cell-52-3" class="code-annotation-target"><a href="#annotated-cell-52-3"></a>  menor_indice <span class="op">=</span> <span class="dv">0</span></span>
+<span id="annotated-cell-52-4"><a href="#annotated-cell-52-4"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(arr)):</span>
+<span id="annotated-cell-52-5"><a href="#annotated-cell-52-5"></a>    <span class="cf">if</span> arr[i] <span class="op">&lt;</span> menor:</span>
+<span id="annotated-cell-52-6"><a href="#annotated-cell-52-6"></a>      menor <span class="op">=</span> arr[i]</span>
+<span id="annotated-cell-52-7"><a href="#annotated-cell-52-7"></a>      menor_indice <span class="op">=</span> i</span>
+<span id="annotated-cell-52-8"><a href="#annotated-cell-52-8"></a>  <span class="cf">return</span> menor_indice</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-46" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-52" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-46" data-code-lines="2" data-code-annotation="1">Armazena o menor valor.</span>
+<span data-code-cell="annotated-cell-52" data-code-lines="2" data-code-annotation="1">Armazena o menor valor.</span>
 </dd>
-<dt data-target-cell="annotated-cell-46" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-52" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-46" data-code-lines="3" data-code-annotation="2">Armazena o índice do menor valor.</span>
+<span data-code-cell="annotated-cell-52" data-code-lines="3" data-code-annotation="2">Armazena o índice do menor valor.</span>
 </dd>
 </dl>
+</div>
+</div>
 </div><div class="column">
-<div class="sourceCode" id="annotated-cell-47"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="1">1</button><span id="annotated-cell-47-1" class="code-annotation-target"><a href="#annotated-cell-47-1"></a><span class="kw">def</span> ordenacaoporSelecao(arr):</span>
-<span id="annotated-cell-47-2"><a href="#annotated-cell-47-2"></a>  novoArr <span class="op">=</span> []</span>
-<span id="annotated-cell-47-3"><a href="#annotated-cell-47-3"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-47" data-target-annotation="2">2</button><span id="annotated-cell-47-4" class="code-annotation-target"><a href="#annotated-cell-47-4"></a>    menor <span class="op">=</span> buscaMenor(arr)</span>
-<span id="annotated-cell-47-5"><a href="#annotated-cell-47-5"></a>    novoArr.append(arr.pop(menor))</span>
-<span id="annotated-cell-47-6"><a href="#annotated-cell-47-6"></a>  <span class="cf">return</span> novoArr</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="32cd6be7" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="annotated-cell-53"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-53" data-target-annotation="1">1</button><span id="annotated-cell-53-1" class="code-annotation-target"><a href="#annotated-cell-53-1"></a><span class="kw">def</span> ordenacaoporSelecao(arr):</span>
+<span id="annotated-cell-53-2"><a href="#annotated-cell-53-2"></a>  novoArr <span class="op">=</span> []</span>
+<span id="annotated-cell-53-3"><a href="#annotated-cell-53-3"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(arr)):</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-53" data-target-annotation="2">2</button><span id="annotated-cell-53-4" class="code-annotation-target"><a href="#annotated-cell-53-4"></a>    menor <span class="op">=</span> buscaMenor(arr)</span>
+<span id="annotated-cell-53-5"><a href="#annotated-cell-53-5"></a>    novoArr.append(arr.pop(menor))</span>
+<span id="annotated-cell-53-6"><a href="#annotated-cell-53-6"></a>  <span class="cf">return</span> novoArr</span>
+<span id="annotated-cell-53-7"><a href="#annotated-cell-53-7"></a></span>
+<span id="annotated-cell-53-8"><a href="#annotated-cell-53-8"></a><span class="bu">print</span>(ordenacaoporSelecao([<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-47" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-53" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-47" data-code-lines="1" data-code-annotation="1">Ordenação em um array.</span>
+<span data-code-cell="annotated-cell-53" data-code-lines="1" data-code-annotation="1">Ordenação em um array.</span>
 </dd>
-<dt data-target-cell="annotated-cell-47" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-53" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-47" data-code-lines="4" data-code-annotation="2">Encontra o menor elemento do array e adiciona ao novo array.</span>
+<span data-code-cell="annotated-cell-53" data-code-lines="4" data-code-annotation="2">Encontra o menor elemento do array e adiciona ao novo array.</span>
 </dd>
 </dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2, 3, 5, 10]</code></pre>
+</div>
+</div>
 </div></div>
+</section>
+<section id="recursividade" class="slide level2">
+<h2>Recursividade</h2>
+<p><br>
+</p>
+<blockquote>
+<p><span class="blue">Recursividade</span> é um mecanismo de programação que permite que uma função ou objeto se refira a si mesmo. Em outras palavras, uma função recursiva é uma função que se define em termos de si mesma.</p>
+</blockquote>
+</section>
+<section id="fatorial" class="slide level2">
+<h2>Fatorial</h2>
+<p><br>
+</p>
+<div id="e09a053d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">def</span> factorial(n):</span>
+<span id="cb20-2"><a></a>  <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb20-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb20-4"><a></a>  <span class="cf">else</span>:</span>
+<span id="cb20-5"><a></a>    <span class="cf">return</span> n <span class="op">*</span> factorial(n <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb20-6"><a></a></span>
+<span id="cb20-7"><a></a>factorial(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<pre><code>120</code></pre>
+</div>
+</div>
+</section>
+<section id="fibonacci" class="slide level2">
+<h2>Fibonacci</h2>
+<p><br>
+</p>
+<div id="9c8f2eb8" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">def</span> fibonacci(n):</span>
+<span id="cb22-2"><a></a>  <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb22-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
+<span id="cb22-4"><a></a>  <span class="cf">else</span>:</span>
+<span id="cb22-5"><a></a>    <span class="cf">return</span> fibonacci(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fibonacci(n <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb22-6"><a></a></span>
+<span id="cb22-7"><a></a>fibonacci(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>21</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+<div id="2792014e" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>[fibonacci(n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<pre><code>[1, 1, 2, 3, 5, 8, 13, 21]</code></pre>
+</div>
+</div>
+</section>
+<section id="soma-acumulada" class="slide level2">
+<h2>Soma acumulada</h2>
+<p><br>
+</p>
+<div id="ab483e06" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">def</span> cumsum(x):</span>
+<span id="cb26-2"><a></a>  <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb26-3"><a></a>    <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb26-4"><a></a>  <span class="cf">else</span>:</span>
+<span id="cb26-5"><a></a>    <span class="cf">return</span> x <span class="op">+</span> cumsum(x <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb26-6"><a></a></span>
+<span id="cb26-7"><a></a>cumsum(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="46">
+<pre><code>15</code></pre>
+</div>
+</div>
+</section>
+<section id="quicksort" class="slide level2">
+<h2>Quicksort</h2>
+<p><br>
+</p>
+<blockquote>
+<p>O <code>quicksort</code> é um algoritmo de ordenação. Este algoritmo é muito mais rápido do que a ordenação por seleção e é muito utilizado na prática. Por exemplo, a biblioteca padrão da linguagem C tem uma função chamada <code>qsort</code> que é uma implementação do <code>quicksort</code>. Este algorítmo utiliza a estratégia <em>dividir para conquistar</em>.</p>
+</blockquote>
+<p>Qual é o array mais simples que um algoritmo de ordenação pode ordenar? <code>[]</code> ← <em>array vazio</em> e <code>[20]</code> ← <em>array com um elemento</em>.</p>
+</section>
+<section id="quicksort-1" class="slide level2">
+<h2>Quicksort</h2>
+<p><br>
+</p>
+<div id="f26021a8" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="kw">def</span> quicksort(arr):</span>
+<span id="cb28-2"><a></a>  <span class="cf">if</span> <span class="bu">len</span>(arr) <span class="op">&lt;</span> <span class="dv">2</span>:</span>
+<span id="cb28-3"><a></a>    <span class="cf">return</span> arr</span>
+<span id="cb28-4"><a></a>  <span class="cf">else</span>:</span>
+<span id="cb28-5"><a></a>    pivo <span class="op">=</span> arr[<span class="dv">0</span>]</span>
+<span id="cb28-6"><a></a>    menores <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> arr[<span class="dv">1</span>:] <span class="cf">if</span> i <span class="op">&lt;=</span> pivo]</span>
+<span id="cb28-7"><a></a>    maiores <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> arr[<span class="dv">1</span>:] <span class="cf">if</span> i <span class="op">&gt;</span> pivo]</span>
+<span id="cb28-8"><a></a>    <span class="cf">return</span> quicksort(menores) <span class="op">+</span> [pivo] <span class="op">+</span> quicksort(maiores)</span>
+<span id="cb28-9"><a></a></span>
+<span id="cb28-10"><a></a><span class="bu">print</span>(quicksort([<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2, 3, 5, 10]</code></pre>
+</div>
+</div>
 </section></section>
 <section>
 <section id="aplicações" class="title-slide slide level1 center">
@@ -728,47 +906,39 @@ Encontrado!
 <p><a href="https://viacep.com.br/" class="uri">https://viacep.com.br/</a></p>
 <p><br>
 </p>
-<div id="909150fa" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb14-2"><a></a></span>
-<span id="cb14-3"><a></a><span class="co"># Função que fará requisição à API</span></span>
-<span id="cb14-4"><a></a><span class="kw">def</span> consulta_cep(cep):</span>
-<span id="cb14-5"><a></a>  url <span class="op">=</span> <span class="ss">f"https://viacep.com.br/ws/</span><span class="sc">{</span>cep<span class="sc">}</span><span class="ss">/json/"</span></span>
-<span id="cb14-6"><a></a>  res <span class="op">=</span> requests.get(url)</span>
-<span id="cb14-7"><a></a>  res <span class="op">=</span> res.json()</span>
-<span id="cb14-8"><a></a>  <span class="cf">return</span> (res[<span class="st">'logradouro'</span>], res[<span class="st">'uf'</span>])</span>
-<span id="cb14-9"><a></a></span>
-<span id="cb14-10"><a></a><span class="co"># Lista de CEPs para consulta</span></span>
-<span id="cb14-11"><a></a>lista_cep <span class="op">=</span> [<span class="st">"13186642"</span>,</span>
-<span id="cb14-12"><a></a>             <span class="st">"13178574"</span>,</span>
-<span id="cb14-13"><a></a>             <span class="st">"13188020"</span>,</span>
-<span id="cb14-14"><a></a>             <span class="st">"13184321"</span>,</span>
-<span id="cb14-15"><a></a>             <span class="st">"20720293"</span>]</span>
-<span id="cb14-16"><a></a></span>
-<span id="cb14-17"><a></a>[consulta_cep(cep)[<span class="dv">0</span>] <span class="cf">for</span> cep <span class="kw">in</span> lista_cep <span class="cf">if</span> consulta_cep(cep)[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"SP"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>['Rua Joaquim Marcelino Leite',
- 'Avenida Cabo Pedro Hoffman',
- 'Rua José de Anchieta',
- 'Rua Bernardino de Almeida']</code></pre>
-</div>
-</div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="im">import</span> requests</span>
+<span id="cb30-2"><a></a></span>
+<span id="cb30-3"><a></a><span class="co"># Função que fará requisição à API</span></span>
+<span id="cb30-4"><a></a><span class="kw">def</span> consulta_cep(cep):</span>
+<span id="cb30-5"><a></a>  url <span class="op">=</span> <span class="ss">f"https://viacep.com.br/ws/</span><span class="sc">{</span>cep<span class="sc">}</span><span class="ss">/json/"</span></span>
+<span id="cb30-6"><a></a>  res <span class="op">=</span> requests.get(url)</span>
+<span id="cb30-7"><a></a>  res <span class="op">=</span> res.json()</span>
+<span id="cb30-8"><a></a>  <span class="cf">return</span> (res[<span class="st">'logradouro'</span>], res[<span class="st">'uf'</span>])</span>
+<span id="cb30-9"><a></a></span>
+<span id="cb30-10"><a></a><span class="co"># Lista de CEPs para consulta</span></span>
+<span id="cb30-11"><a></a>lista_cep <span class="op">=</span> [<span class="st">"13186642"</span>,</span>
+<span id="cb30-12"><a></a>             <span class="st">"13178574"</span>,</span>
+<span id="cb30-13"><a></a>             <span class="st">"13188020"</span>,</span>
+<span id="cb30-14"><a></a>             <span class="st">"13184321"</span>,</span>
+<span id="cb30-15"><a></a>             <span class="st">"20720293"</span>]</span>
+<span id="cb30-16"><a></a></span>
+<span id="cb30-17"><a></a>[consulta_cep(cep)[<span class="dv">0</span>] <span class="cf">for</span> cep <span class="kw">in</span> lista_cep <span class="cf">if</span> consulta_cep(cep)[<span class="dv">1</span>] <span class="op">==</span> <span class="st">"SP"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="consultado-a-cotação-do-dólar" class="slide level2">
 <h2>Consultado a cotação do Dólar</h2>
 <p><a href="https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios" class="uri">https://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios</a></p>
 <p><br>
 </p>
-<div id="2bb8a40e" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb16-2"><a></a><span class="kw">def</span> cotar(data):</span>
-<span id="cb16-3"><a></a>  url <span class="op">=</span> <span class="ss">f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='</span><span class="sc">{</span>data<span class="sc">}</span><span class="ss">'&amp;%24format=json"</span></span>
-<span id="cb16-4"><a></a>  res <span class="op">=</span> requests.get(url)</span>
-<span id="cb16-5"><a></a>  res <span class="op">=</span> res.json()</span>
-<span id="cb16-6"><a></a>  <span class="cf">return</span> res[<span class="st">'value'</span>][<span class="dv">0</span>][<span class="st">'cotacaoVenda'</span>]</span>
-<span id="cb16-7"><a></a></span>
-<span id="cb16-8"><a></a>cotar(<span class="st">"08282024"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="2d34a316" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="im">import</span> requests</span>
+<span id="cb31-2"><a></a><span class="kw">def</span> cotar(data):</span>
+<span id="cb31-3"><a></a>  url <span class="op">=</span> <span class="ss">f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='</span><span class="sc">{</span>data<span class="sc">}</span><span class="ss">'&amp;%24format=json"</span></span>
+<span id="cb31-4"><a></a>  res <span class="op">=</span> requests.get(url)</span>
+<span id="cb31-5"><a></a>  res <span class="op">=</span> res.json()</span>
+<span id="cb31-6"><a></a>  <span class="cf">return</span> res[<span class="st">'value'</span>][<span class="dv">0</span>][<span class="st">'cotacaoVenda'</span>]</span>
+<span id="cb31-7"><a></a></span>
+<span id="cb31-8"><a></a>cotar(<span class="st">"08282024"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
 <pre><code>5.5315</code></pre>
 </div>
 </div>
@@ -781,10 +951,10 @@ Encontrado!
 <p><br>
 </p>
 <p>Para resolver este problema precisamos ententender como o Python lida com datas. É possível transformar uma string <code>"08122024"</code> em um tipo de dado <code>datetime</code>. O argumento <code>"%m%d%Y"</code> é para identificar como a estrutura da data está sendo recebida - mês, dia e ano</p>
-<div id="9d037751" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb18-2"><a></a>datetime.strptime(<span class="st">"08122024"</span>, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="c9fa2209" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb33-2"><a></a>datetime.strptime(<span class="st">"08122024"</span>, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
 <pre><code>datetime.datetime(2024, 8, 12, 0, 0)</code></pre>
 </div>
 </div>
@@ -803,11 +973,11 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <p><br>
 </p>
 <p>Para retornar de um tipo <code>datetime</code> para uma <em>string</em>, com a estrutura <code>"%m%d%Y"</code>,pode-se utilizar a função <code>strftime</code></p>
-<div id="c42b4bbe" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
-<span id="cb20-2"><a></a>data <span class="op">=</span> datetime.strptime(<span class="st">"08122024"</span>, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>) <span class="op">-</span> timedelta(<span class="dv">1</span>)</span>
-<span id="cb20-3"><a></a>datetime.strftime(data, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div id="fd1e84a9" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb35-2"><a></a>data <span class="op">=</span> datetime.strptime(<span class="st">"08122024"</span>, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>) <span class="op">-</span> timedelta(<span class="dv">1</span>)</span>
+<span id="cb35-3"><a></a>datetime.strftime(data, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
 <pre><code>'08112024'</code></pre>
 </div>
 </div>
@@ -817,13 +987,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <p><br>
 </p>
 <p>Nos dias <em>não úteis</em> a API retorna uma lista vazia na chave <code>value</code></p>
-<div id="80697333" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>data <span class="op">=</span> <span class="st">"09012024"</span></span>
-<span id="cb22-2"><a></a></span>
-<span id="cb22-3"><a></a>url <span class="op">=</span> <span class="ss">f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='</span><span class="sc">{</span>data<span class="sc">}</span><span class="ss">'&amp;%24format=json"</span></span>
-<span id="cb22-4"><a></a>res <span class="op">=</span> requests.get(url)</span>
-<span id="cb22-5"><a></a>res <span class="op">=</span> res.json()</span>
-<span id="cb22-6"><a></a><span class="bu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7d5e334e" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a>data <span class="op">=</span> <span class="st">"09012024"</span></span>
+<span id="cb37-2"><a></a></span>
+<span id="cb37-3"><a></a>url <span class="op">=</span> <span class="ss">f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='</span><span class="sc">{</span>data<span class="sc">}</span><span class="ss">'&amp;%24format=json"</span></span>
+<span id="cb37-4"><a></a>res <span class="op">=</span> requests.get(url)</span>
+<span id="cb37-5"><a></a>res <span class="op">=</span> res.json()</span>
+<span id="cb37-6"><a></a><span class="bu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'@odata.context': 'https://was-p.bcnet.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata$metadata#_CotacaoDolarDia', 'value': []}</code></pre>
 </div>
@@ -833,22 +1003,22 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h2>Consultado a cotação do Dólar</h2>
 <p><br>
 </p>
-<div id="bb62d08e" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb24-2"><a></a></span>
-<span id="cb24-3"><a></a><span class="kw">def</span> cotar(data):</span>
-<span id="cb24-4"><a></a>  url <span class="op">=</span> <span class="vs">fr"https://olinda</span><span class="dv">.</span><span class="vs">bcb</span><span class="dv">.</span><span class="vs">gov</span><span class="dv">.</span><span class="vs">br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia</span><span class="kw">(</span><span class="vs">dataCotacao=@dataCotacao</span><span class="kw">)</span><span class="op">?</span><span class="vs">@dataCotacao='</span><span class="sc">{</span>data<span class="sc">}</span><span class="vs">'&amp;</span><span class="dv">$</span><span class="vs">format=json"</span></span>
-<span id="cb24-5"><a></a>  res <span class="op">=</span> requests.get(url)</span>
-<span id="cb24-6"><a></a>  res <span class="op">=</span> res.json()</span>
-<span id="cb24-7"><a></a>  <span class="cf">if</span> res[<span class="st">'value'</span>]: </span>
-<span id="cb24-8"><a></a>    <span class="cf">return</span> res[<span class="st">'value'</span>][<span class="dv">0</span>][<span class="st">'cotacaoVenda'</span>]</span>
-<span id="cb24-9"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb24-10"><a></a>    dia_anterior <span class="op">=</span> datetime.strptime(data, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>) <span class="op">-</span> timedelta(<span class="dv">1</span>)</span>
-<span id="cb24-11"><a></a>    dia_anterior <span class="op">=</span> datetime.strftime(dia_anterior, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>)</span>
-<span id="cb24-12"><a></a>    <span class="cf">return</span> cotar(dia_anterior)</span>
-<span id="cb24-13"><a></a></span>
-<span id="cb24-14"><a></a>[cotar(i) <span class="cf">for</span> i <span class="kw">in</span> [<span class="st">"09022024"</span>, <span class="st">"09012024"</span>, <span class="st">"08312024"</span>, <span class="st">"08302024"</span>, <span class="st">"08292024"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="c5f28a5c" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a><span class="im">import</span> requests</span>
+<span id="cb39-2"><a></a></span>
+<span id="cb39-3"><a></a><span class="kw">def</span> cotar(data):</span>
+<span id="cb39-4"><a></a>  url <span class="op">=</span> <span class="vs">fr"https://olinda</span><span class="dv">.</span><span class="vs">bcb</span><span class="dv">.</span><span class="vs">gov</span><span class="dv">.</span><span class="vs">br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia</span><span class="kw">(</span><span class="vs">dataCotacao=@dataCotacao</span><span class="kw">)</span><span class="op">?</span><span class="vs">@dataCotacao='</span><span class="sc">{</span>data<span class="sc">}</span><span class="vs">'&amp;</span><span class="dv">$</span><span class="vs">format=json"</span></span>
+<span id="cb39-5"><a></a>  res <span class="op">=</span> requests.get(url)</span>
+<span id="cb39-6"><a></a>  res <span class="op">=</span> res.json()</span>
+<span id="cb39-7"><a></a>  <span class="cf">if</span> res[<span class="st">'value'</span>]: </span>
+<span id="cb39-8"><a></a>    <span class="cf">return</span> res[<span class="st">'value'</span>][<span class="dv">0</span>][<span class="st">'cotacaoVenda'</span>]</span>
+<span id="cb39-9"><a></a>  <span class="cf">else</span>:</span>
+<span id="cb39-10"><a></a>    dia_anterior <span class="op">=</span> datetime.strptime(data, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>) <span class="op">-</span> timedelta(<span class="dv">1</span>)</span>
+<span id="cb39-11"><a></a>    dia_anterior <span class="op">=</span> datetime.strftime(dia_anterior, <span class="st">"%m</span><span class="sc">%d</span><span class="st">%Y"</span>)</span>
+<span id="cb39-12"><a></a>    <span class="cf">return</span> cotar(dia_anterior)</span>
+<span id="cb39-13"><a></a></span>
+<span id="cb39-14"><a></a>[cotar(i) <span class="cf">for</span> i <span class="kw">in</span> [<span class="st">"09022024"</span>, <span class="st">"09012024"</span>, <span class="st">"08312024"</span>, <span class="st">"08302024"</span>, <span class="st">"08292024"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="52">
 <pre><code>[5.623, 5.6562, 5.6562, 5.6562, 5.6358]</code></pre>
 </div>
 </div>
@@ -871,37 +1041,37 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="autenticação">Autenticação</h3>
 <p><br>
 </p>
-<div id="06924cd6" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="im">import</span> os</span>
-<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a><span class="im">import</span> requests</span>
-<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
-<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-5" class="code-annotation-target"><a href="#annotated-cell-9-5"></a>load_dotenv(<span class="st">"../.env"</span>)</span>
-<span id="annotated-cell-9-6"><a href="#annotated-cell-9-6"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2">2</button><span id="annotated-cell-9-7" class="code-annotation-target"><a href="#annotated-cell-9-7"></a>s <span class="op">=</span> requests.Session()</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="3">3</button><span id="annotated-cell-9-8" class="code-annotation-target"><a href="#annotated-cell-9-8"></a>s.post(</span>
-<span id="annotated-cell-9-9"><a href="#annotated-cell-9-9"></a>    <span class="ss">f"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'SPTRANS_TOKEN'</span>)<span class="sc">}</span><span class="ss">"</span></span>
-<span id="annotated-cell-9-10"><a href="#annotated-cell-9-10"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e76fa247" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="annotated-cell-18"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-18-1"><a href="#annotated-cell-18-1"></a><span class="im">import</span> os</span>
+<span id="annotated-cell-18-2"><a href="#annotated-cell-18-2"></a><span class="im">import</span> requests</span>
+<span id="annotated-cell-18-3"><a href="#annotated-cell-18-3"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="annotated-cell-18-4"><a href="#annotated-cell-18-4"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="1">1</button><span id="annotated-cell-18-5" class="code-annotation-target"><a href="#annotated-cell-18-5"></a>load_dotenv(<span class="st">"../.env"</span>)</span>
+<span id="annotated-cell-18-6"><a href="#annotated-cell-18-6"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="2">2</button><span id="annotated-cell-18-7" class="code-annotation-target"><a href="#annotated-cell-18-7"></a>s <span class="op">=</span> requests.Session()</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="3">3</button><span id="annotated-cell-18-8" class="code-annotation-target"><a href="#annotated-cell-18-8"></a>s.post(</span>
+<span id="annotated-cell-18-9"><a href="#annotated-cell-18-9"></a>    <span class="ss">f"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token=</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'SPTRANS_TOKEN'</span>)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="annotated-cell-18-10"><a href="#annotated-cell-18-10"></a>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="5" data-code-annotation="1">Ler o arquivo tendo o token como variável de ambiente</span>
+<span data-code-cell="annotated-cell-18" data-code-lines="5" data-code-annotation="1">Ler o arquivo tendo o token como variável de ambiente</span>
 </dd>
-<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="7" data-code-annotation="2">Persistir uma sessão após autenticar</span>
+<span data-code-cell="annotated-cell-18" data-code-lines="7" data-code-annotation="2">Persistir uma sessão após autenticar</span>
 </dd>
-<dt data-target-cell="annotated-cell-9" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="8,9,10" data-code-annotation="3">Fazer uma requisição com <code>post</code> incluindo o token</span>
+<span data-code-cell="annotated-cell-18" data-code-lines="8,9,10" data-code-annotation="3">Fazer uma requisição com <code>post</code> incluindo o token</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="53">
 <pre><code>True</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="53">
 <pre><code>&lt;Response [200]&gt;</code></pre>
 </div>
 </div>
@@ -911,25 +1081,25 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="busca-por-linhas-segundo-termos">Busca por linhas segundo termos</h3>
 <p><br>
 </p>
-<div id="8eb50e56" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="annotated-cell-10"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="1">1</button><span id="annotated-cell-10-1" class="code-annotation-target"><a href="#annotated-cell-10-1"></a>linhas_lapa <span class="op">=</span> s.get(</span>
-<span id="annotated-cell-10-2"><a href="#annotated-cell-10-2"></a>    <span class="st">"http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa"</span></span>
-<span id="annotated-cell-10-3"><a href="#annotated-cell-10-3"></a>)</span>
-<span id="annotated-cell-10-4"><a href="#annotated-cell-10-4"></a>linhas_lapa <span class="op">=</span> linhas_lapa.json()</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-10" data-target-annotation="2">2</button><span id="annotated-cell-10-5" class="code-annotation-target"><a href="#annotated-cell-10-5"></a>linhas_lapa[:<span class="dv">3</span>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="388a33bc" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="annotated-cell-19"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-19" data-target-annotation="1">1</button><span id="annotated-cell-19-1" class="code-annotation-target"><a href="#annotated-cell-19-1"></a>linhas_lapa <span class="op">=</span> s.get(</span>
+<span id="annotated-cell-19-2"><a href="#annotated-cell-19-2"></a>    <span class="st">"http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa"</span></span>
+<span id="annotated-cell-19-3"><a href="#annotated-cell-19-3"></a>)</span>
+<span id="annotated-cell-19-4"><a href="#annotated-cell-19-4"></a>linhas_lapa <span class="op">=</span> linhas_lapa.json()</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-19" data-target-annotation="2">2</button><span id="annotated-cell-19-5" class="code-annotation-target"><a href="#annotated-cell-19-5"></a>linhas_lapa[:<span class="dv">3</span>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-10" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-19" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-lines="1,2,3" data-code-annotation="1">Utilizando o método <code>get</code> para requisitar as linhas de ônibus segundo a busca pelo termo “Lapa”</span>
+<span data-code-cell="annotated-cell-19" data-code-lines="1,2,3" data-code-annotation="1">Utilizando o método <code>get</code> para requisitar as linhas de ônibus segundo a busca pelo termo “Lapa”</span>
 </dd>
-<dt data-target-cell="annotated-cell-10" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-19" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-10" data-code-lines="5" data-code-annotation="2">Mostrando uma lista com a 3 primeitas linhas encontradas</span>
+<span data-code-cell="annotated-cell-19" data-code-lines="5" data-code-annotation="2">Mostrando uma lista com a 3 primeitas linhas encontradas</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="54">
 <pre><code>[{'cl': 841,
   'lc': False,
   'lt': '118Y',
@@ -959,25 +1129,25 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="busca-por-paradas">Busca por paradas</h3>
 <p><br>
 </p>
-<div id="cdc91431" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="annotated-cell-11"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="1">1</button><span id="annotated-cell-11-1" class="code-annotation-target"><a href="#annotated-cell-11-1"></a>res <span class="op">=</span> s.get(</span>
-<span id="annotated-cell-11-2"><a href="#annotated-cell-11-2"></a>    <span class="st">"http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506"</span></span>
-<span id="annotated-cell-11-3"><a href="#annotated-cell-11-3"></a>)</span>
-<span id="annotated-cell-11-4"><a href="#annotated-cell-11-4"></a>paradas <span class="op">=</span> res.json()</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-11" data-target-annotation="2">2</button><span id="annotated-cell-11-5" class="code-annotation-target"><a href="#annotated-cell-11-5"></a>paradas[:<span class="dv">3</span>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3549888e" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="annotated-cell-20"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1">1</button><span id="annotated-cell-20-1" class="code-annotation-target"><a href="#annotated-cell-20-1"></a>res <span class="op">=</span> s.get(</span>
+<span id="annotated-cell-20-2"><a href="#annotated-cell-20-2"></a>    <span class="st">"http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506"</span></span>
+<span id="annotated-cell-20-3"><a href="#annotated-cell-20-3"></a>)</span>
+<span id="annotated-cell-20-4"><a href="#annotated-cell-20-4"></a>paradas <span class="op">=</span> res.json()</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2">2</button><span id="annotated-cell-20-5" class="code-annotation-target"><a href="#annotated-cell-20-5"></a>paradas[:<span class="dv">3</span>]</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-11" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-20" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="1,2,3" data-code-annotation="1">Requisição das paradas de ônibus com o nome, endereço e coordenada segundo o código da linha (as chaves <code>cl</code> na saída anterior)</span>
+<span data-code-cell="annotated-cell-20" data-code-lines="1,2,3" data-code-annotation="1">Requisição das paradas de ônibus com o nome, endereço e coordenada segundo o código da linha (as chaves <code>cl</code> na saída anterior)</span>
 </dd>
-<dt data-target-cell="annotated-cell-11" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-20" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-11" data-code-lines="5" data-code-annotation="2">Lista com as informações das 3 primeiras paradas</span>
+<span data-code-cell="annotated-cell-20" data-code-lines="5" data-code-annotation="2">Lista com as informações das 3 primeiras paradas</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="55">
 <pre><code>[{'cp': 7014417,
   'np': 'ANGELICA B/C',
   'ed': 'AV   ANGELICA',
@@ -1001,13 +1171,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="paradas-de-ônibus-no-mapa">Paradas de ônibus no mapa</h3>
 <p><br>
 </p>
-<div id="a989ceef" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="im">from</span> folium <span class="im">import</span> Map, Marker</span>
-<span id="cb30-2"><a></a></span>
-<span id="cb30-3"><a></a>m <span class="op">=</span> Map(location<span class="op">=</span>[paradas[<span class="dv">3</span>][<span class="st">"py"</span>], paradas[<span class="dv">3</span>][<span class="st">"px"</span>]], zoom_start<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb30-4"><a></a><span class="cf">for</span> i <span class="kw">in</span> paradas:</span>
-<span id="cb30-5"><a></a>    Marker(location<span class="op">=</span>[i[<span class="st">"py"</span>], i[<span class="st">"px"</span>]], popup<span class="op">=</span>i[<span class="st">"np"</span>]).add_to(m)</span>
-<span id="cb30-6"><a></a>m.save(<span class="st">"2506.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1e0531ea" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="im">from</span> folium <span class="im">import</span> Map, Marker</span>
+<span id="cb45-2"><a></a></span>
+<span id="cb45-3"><a></a>m <span class="op">=</span> Map(location<span class="op">=</span>[paradas[<span class="dv">3</span>][<span class="st">"py"</span>], paradas[<span class="dv">3</span>][<span class="st">"px"</span>]], zoom_start<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb45-4"><a></a><span class="cf">for</span> i <span class="kw">in</span> paradas:</span>
+<span id="cb45-5"><a></a>    Marker(location<span class="op">=</span>[i[<span class="st">"py"</span>], i[<span class="st">"px"</span>]], popup<span class="op">=</span>i[<span class="st">"np"</span>]).add_to(m)</span>
+<span id="cb45-6"><a></a>m.save(<span class="st">"2506.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
@@ -1020,16 +1190,16 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="posições-em-tempo-real">Posições em tempo real</h3>
 <p><br>
 </p>
-<div id="ed62de23" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="annotated-cell-13"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-13-1"><a href="#annotated-cell-13-1"></a>pos <span class="op">=</span> s.get(</span>
-<span id="annotated-cell-13-2"><a href="#annotated-cell-13-2"></a>    <span class="st">"http://api.olhovivo.sptrans.com.br/v2.1//Posicao/Linha?codigoLinha=2506"</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-13" data-target-annotation="1">1</button><span id="annotated-cell-13-3" class="code-annotation-target"><a href="#annotated-cell-13-3"></a>)</span>
-<span id="annotated-cell-13-4"><a href="#annotated-cell-13-4"></a>pos.json()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fa47fb0b" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="annotated-cell-22"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-22-1"><a href="#annotated-cell-22-1"></a>pos <span class="op">=</span> s.get(</span>
+<span id="annotated-cell-22-2"><a href="#annotated-cell-22-2"></a>    <span class="st">"http://api.olhovivo.sptrans.com.br/v2.1//Posicao/Linha?codigoLinha=2506"</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-22" data-target-annotation="1">1</button><span id="annotated-cell-22-3" class="code-annotation-target"><a href="#annotated-cell-22-3"></a>)</span>
+<span id="annotated-cell-22-4"><a href="#annotated-cell-22-4"></a>pos.json()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-13" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-22" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-13" data-code-lines="3" data-code-annotation="1">Requisição da posição do ônibus segundo o código da linha informada</span>
+<span data-code-cell="annotated-cell-22" data-code-lines="3" data-code-annotation="1">Requisição da posição do ônibus segundo o código da linha informada</span>
 </dd>
 </dl>
 </div>
@@ -1086,13 +1256,13 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="obtendo-updates">Obtendo updates</h3>
 <p><br>
 </p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb32-2"><a></a><span class="im">import</span> os</span>
-<span id="cb32-3"><a></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
-<span id="cb32-4"><a></a>load_dotenv(<span class="st">"../.env"</span>)</span>
-<span id="cb32-5"><a></a>updates <span class="op">=</span> requests.get(<span class="ss">f"https://api.telegram.org/bot</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'TELEGRAM_TOKEN'</span>)<span class="sc">}</span><span class="ss">/getUpdates"</span>)</span>
-<span id="cb32-6"><a></a>updates <span class="op">=</span> updates.json()</span>
-<span id="cb32-7"><a></a>updates[<span class="st">"result"</span>][<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a><span class="im">import</span> requests</span>
+<span id="cb47-2"><a></a><span class="im">import</span> os</span>
+<span id="cb47-3"><a></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb47-4"><a></a>load_dotenv(<span class="st">"../.env"</span>)</span>
+<span id="cb47-5"><a></a>updates <span class="op">=</span> requests.get(<span class="ss">f"https://api.telegram.org/bot</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'TELEGRAM_TOKEN'</span>)<span class="sc">}</span><span class="ss">/getUpdates"</span>)</span>
+<span id="cb47-6"><a></a>updates <span class="op">=</span> updates.json()</span>
+<span id="cb47-7"><a></a>updates[<span class="st">"result"</span>][<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'update_id': 80721953,
  'message': {'message_id': 9,
   'from': {'id': 1042885840,
@@ -1114,10 +1284,10 @@ eyJhdHRyIjp7ImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiZnJvbSBkYXRldGltZSBpbXBv
 <h3 id="enviando-mensagem">Enviando mensagem</h3>
 <p><br>
 </p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>requests.post(</span>
-<span id="cb34-2"><a></a>        url<span class="op">=</span><span class="ss">f"https://api.telegram.org/bot</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'TELEGRAM_TOKEN'</span>)<span class="sc">}</span><span class="ss">/sendMessage"</span>,</span>
-<span id="cb34-3"><a></a>        data<span class="op">=</span>{<span class="st">"chat_id"</span>: <span class="dv">1042885840</span>, <span class="st">"text"</span>: <span class="st">"Olá tudo bem?"</span>}</span>
-<span id="cb34-4"><a></a>    ).json()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a>requests.post(</span>
+<span id="cb49-2"><a></a>        url<span class="op">=</span><span class="ss">f"https://api.telegram.org/bot</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'TELEGRAM_TOKEN'</span>)<span class="sc">}</span><span class="ss">/sendMessage"</span>,</span>
+<span id="cb49-3"><a></a>        data<span class="op">=</span>{<span class="st">"chat_id"</span>: <span class="dv">1042885840</span>, <span class="st">"text"</span>: <span class="st">"Olá tudo bem?"</span>}</span>
+<span id="cb49-4"><a></a>    ).json()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>{'ok': True,
  'result': {'message_id': 10,
   'from': {'id': 7627305412,
@@ -1162,18 +1332,18 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <p><br>
 </p>
 <p>Matriz pode ser definida como uma lista de listas</p>
-<div id="25d9016b" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a>[[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="a9d94ce5" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a>[[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
 <pre><code>[[1, 2, 3], [4, 5, 6], [7, 8, 9]]</code></pre>
 </div>
 </div>
 <p><br>
 </p>
 <p>Criando uma matriz com <span class="blue"><em>list comprehension</em></span></p>
-<div id="75198f46" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a></a>matrix <span class="op">=</span> [[column <span class="cf">for</span> column <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)] <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]</span>
-<span id="cb38-2"><a></a><span class="bu">print</span>(matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="304ecbbb" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a></a>matrix <span class="op">=</span> [[column <span class="cf">for</span> column <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)] <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]</span>
+<span id="cb53-2"><a></a><span class="bu">print</span>(matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3], [0, 1, 2, 3]]</code></pre>
 </div>
@@ -1181,9 +1351,9 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <p><br>
 </p>
 <p>Acessando os valores de uma matrix</p>
-<div id="a2c0e935" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>matrix[<span class="dv">2</span>][<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div id="d131d669" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a>matrix[<span class="dv">2</span>][<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>3</code></pre>
 </div>
 </div>
@@ -1197,19 +1367,19 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <p><span class="blue">NumPy</span> é uma biblioteca Python usada para trabalhar com arrays.</p>
 <p><br>
 </p>
-<div id="8350c71f" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb42-2"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">4</span>, <span class="dv">5</span>]])</span>
-<span id="cb42-3"><a></a>A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div id="25fd2b41" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb57-2"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">4</span>, <span class="dv">5</span>]])</span>
+<span id="cb57-3"><a></a>A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>array([[1, 2],
        [4, 5]])</code></pre>
 </div>
 </div>
-<div id="7914ae95" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a></a>B <span class="op">=</span> np.array([[<span class="dv">7</span>, <span class="dv">8</span>], [<span class="dv">9</span>, <span class="dv">10</span>]])</span>
-<span id="cb44-2"><a></a>B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div id="6e568d2c" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a></a>B <span class="op">=</span> np.array([[<span class="dv">7</span>, <span class="dv">8</span>], [<span class="dv">9</span>, <span class="dv">10</span>]])</span>
+<span id="cb59-2"><a></a>B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
 <pre><code>array([[ 7,  8],
        [ 9, 10]])</code></pre>
 </div>
@@ -1218,9 +1388,9 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <ul>
 <li>Soma</li>
 </ul>
-<div id="dbab77ab" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a>np.add(A, B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div id="108cac2e" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a>np.add(A, B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="61">
 <pre><code>array([[ 8, 10],
        [13, 15]])</code></pre>
 </div>
@@ -1228,9 +1398,9 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <ul>
 <li>Multiplicação</li>
 </ul>
-<div id="ee8df8bd" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a></a>np.dot(A, B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div id="5234175a" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a>np.dot(A, B)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="62">
 <pre><code>array([[25, 28],
        [73, 82]])</code></pre>
 </div>
@@ -1238,9 +1408,9 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <ul>
 <li>Transposto</li>
 </ul>
-<div id="b946aea1" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a></a>np.transpose(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div id="1da1f609" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a>np.transpose(A)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
 <pre><code>array([[1, 4],
        [2, 5]])</code></pre>
 </div>
@@ -1251,10 +1421,10 @@ a_{31} &amp; a_{32} &amp; a_{33} \\
 <h2>Calculando o inverso de uma matriz</h2>
 <p><br>
 </p>
-<div id="adaef824" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a></a>matrix <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb52-2"><a></a>np.linalg.inv(matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div id="edf30dd5" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a>matrix <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb67-2"><a></a>np.linalg.inv(matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="64">
 <pre><code>array([[-2. ,  1. ],
        [ 1.5, -0.5]])</code></pre>
 </div>
@@ -1281,11 +1451,11 @@ Ax = b
 x = A^{-1}b
 \]</span></p>
 </div><div class="column">
-<div id="14382d3c" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="op">-</span><span class="dv">5</span>]])</span>
-<span id="cb54-2"><a></a>b <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>])</span>
-<span id="cb54-3"><a></a>np.dot(np.linalg.inv(A), b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div id="0d62f2aa" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="op">-</span><span class="dv">5</span>]])</span>
+<span id="cb69-2"><a></a>b <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>])</span>
+<span id="cb69-3"><a></a>np.dot(np.linalg.inv(A), b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="65">
 <pre><code>array([3., 1.])</code></pre>
 </div>
 </div>
@@ -1316,11 +1486,11 @@ x = A^{-1}b
 \hat{\beta} = (X'X)^{-1}X'y
 \]</span></p>
 </div><div class="column">
-<div id="5e7a1be6" class="cell" data-execution_count="26">
+<div id="f2b99923" class="cell" data-execution_count="34">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/cell-27-output-1.png" width="640" height="480"></p>
+<p><img data-src="index_files/figure-revealjs/cell-35-output-1.png" width="640" height="480"></p>
 </figure>
 </div>
 </div>
@@ -1332,13 +1502,13 @@ x = A^{-1}b
 <p><br>
 </p>
 <p>Aplicar a fórmula matricial da regressão nos dados a seguir</p>
-<div id="1fd759cf" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a>X <span class="op">=</span> [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span>
-<span id="cb56-2"><a></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="3c3587a1" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a>X <span class="op">=</span> [<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span>
+<span id="cb71-2"><a></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Os valores de <code>X</code> devem ser rearranjados para:</p>
-<div id="642ab4fb" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a>X <span class="op">=</span> [[<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="350d8190" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a></a>X <span class="op">=</span> [[<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -1350,23 +1520,23 @@ x = A^{-1}b
 <h2>Leitura de arquivos</h2>
 <p><br>
 </p>
-<div id="6882ff95" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a>arquivo <span class="op">=</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"r"</span>)</span>
-<span id="cb58-2"><a></a>conteudo <span class="op">=</span> arquivo.read()</span>
-<span id="cb58-3"><a></a><span class="bu">print</span>(conteudo)</span>
-<span id="cb58-4"><a></a>arquivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f6daddaa" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a>arquivo <span class="op">=</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"r"</span>)</span>
+<span id="cb73-2"><a></a>conteudo <span class="op">=</span> arquivo.read()</span>
+<span id="cb73-3"><a></a><span class="bu">print</span>(conteudo)</span>
+<span id="cb73-4"><a></a>arquivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
-<div id="e88f771b" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a></a>arquivo <span class="op">=</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"r"</span>)</span>
-<span id="cb59-2"><a></a>texto <span class="op">=</span> []</span>
-<span id="cb59-3"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb59-4"><a></a>  linha <span class="op">=</span> arquivo.readline()</span>
-<span id="cb59-5"><a></a>  <span class="cf">if</span> <span class="kw">not</span> linha:</span>
-<span id="cb59-6"><a></a>    <span class="cf">break</span></span>
-<span id="cb59-7"><a></a>  texto.append(linha.rstrip(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>))</span>
-<span id="cb59-8"><a></a>arquivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="61f145f9" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a></a>arquivo <span class="op">=</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"r"</span>)</span>
+<span id="cb74-2"><a></a>texto <span class="op">=</span> []</span>
+<span id="cb74-3"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb74-4"><a></a>  linha <span class="op">=</span> arquivo.readline()</span>
+<span id="cb74-5"><a></a>  <span class="cf">if</span> <span class="kw">not</span> linha:</span>
+<span id="cb74-6"><a></a>    <span class="cf">break</span></span>
+<span id="cb74-7"><a></a>  texto.append(linha.rstrip(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>))</span>
+<span id="cb74-8"><a></a>arquivo.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="leitura-de-arquivos-1" class="slide level2">
@@ -1376,19 +1546,19 @@ x = A^{-1}b
 <p>A estutura <code>with</code> serve para fechar de forma automática o arquivo que foi aberto com a função <code>open</code></p>
 <p><br>
 </p>
-<div id="57a17e2e" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
-<span id="cb60-2"><a></a>  conteudo <span class="op">=</span> f.read()</span>
-<span id="cb60-3"><a></a><span class="bu">print</span>(conteudo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="76f84c29" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb75-2"><a></a>  conteudo <span class="op">=</span> f.read()</span>
+<span id="cb75-3"><a></a><span class="bu">print</span>(conteudo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="escrita-de-arquivos" class="slide level2">
 <h2>Escrita de arquivos</h2>
 <p><br>
 </p>
-<div id="761a45d5" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
-<span id="cb61-2"><a></a>  f.write(<span class="st">"olá mundo!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e3550fc1" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"arquivo.txt"</span>, <span class="st">"w"</span>) <span class="im">as</span> f:</span>
+<span id="cb76-2"><a></a>  f.write(<span class="st">"olá mundo!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="escrita-e-leitura-de-arquivos-com-estruturas-python" class="slide level2">
@@ -1396,90 +1566,24 @@ x = A^{-1}b
 <p><br>
 </p>
 <h3 id="escrita">Escrita</h3>
-<div id="463aefdc" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="im">from</span> pickle <span class="im">import</span> dump</span>
-<span id="cb62-2"><a></a>data <span class="op">=</span> {</span>
-<span id="cb62-3"><a></a>    <span class="st">'a'</span>: [<span class="dv">1</span>, <span class="fl">2.0</span>, <span class="dv">3</span><span class="op">+</span><span class="ot">4j</span>],</span>
-<span id="cb62-4"><a></a>    <span class="st">'b'</span>: (<span class="st">"character string"</span>),</span>
-<span id="cb62-5"><a></a>    <span class="st">'c'</span>: {<span class="va">None</span>, <span class="va">True</span>, <span class="va">False</span>}</span>
-<span id="cb62-6"><a></a>}</span>
-<span id="cb62-7"><a></a></span>
-<span id="cb62-8"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.pickle'</span>, <span class="st">'wb'</span>) <span class="im">as</span> f:</span>
-<span id="cb62-9"><a></a>  dump(data, f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e9d3260e" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a><span class="im">from</span> pickle <span class="im">import</span> dump</span>
+<span id="cb77-2"><a></a>data <span class="op">=</span> {</span>
+<span id="cb77-3"><a></a>    <span class="st">'a'</span>: [<span class="dv">1</span>, <span class="fl">2.0</span>, <span class="dv">3</span><span class="op">+</span><span class="ot">4j</span>],</span>
+<span id="cb77-4"><a></a>    <span class="st">'b'</span>: (<span class="st">"character string"</span>),</span>
+<span id="cb77-5"><a></a>    <span class="st">'c'</span>: {<span class="va">None</span>, <span class="va">True</span>, <span class="va">False</span>}</span>
+<span id="cb77-6"><a></a>}</span>
+<span id="cb77-7"><a></a></span>
+<span id="cb77-8"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.pickle'</span>, <span class="st">'wb'</span>) <span class="im">as</span> f:</span>
+<span id="cb77-9"><a></a>  dump(data, f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br>
 </p>
 <h3 id="leitura">Leitura</h3>
-<div id="c5bfac8d" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a><span class="im">from</span> pickle <span class="im">import</span> load</span>
-<span id="cb63-2"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.pickle'</span>, <span class="st">'rb'</span>) <span class="im">as</span> f:</span>
-<span id="cb63-3"><a></a>  data <span class="op">=</span> load(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section></section>
-<section>
-<section id="recursividade" class="title-slide slide level1 center">
-<h1>Recursividade</h1>
-<blockquote>
-<p><span class="blue">Recursividade</span> é um mecanismo de programação que permite que uma função ou objeto se refira a si mesmo. Em outras palavras, uma função recursiva é uma função que se define em termos de si mesma.</p>
-</blockquote>
-</section>
-<section id="fatorial" class="slide level2">
-<h2>Fatorial</h2>
-<p><br>
-</p>
-<div id="3236e6e1" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a><span class="kw">def</span> factorial(n):</span>
-<span id="cb64-2"><a></a>  <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
-<span id="cb64-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb64-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb64-5"><a></a>    <span class="cf">return</span> n <span class="op">*</span> factorial(n <span class="op">-</span> <span class="dv">1</span>)</span>
-<span id="cb64-6"><a></a></span>
-<span id="cb64-7"><a></a>factorial(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
-<pre><code>120</code></pre>
-</div>
-</div>
-</section>
-<section id="fibonacci" class="slide level2">
-<h2>Fibonacci</h2>
-<p><br>
-</p>
-<div id="e69f17be" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a></a><span class="kw">def</span> fibonacci(n):</span>
-<span id="cb66-2"><a></a>  <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
-<span id="cb66-3"><a></a>    <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb66-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb66-5"><a></a>    <span class="cf">return</span> fibonacci(n <span class="op">-</span> <span class="dv">1</span>) <span class="op">+</span> fibonacci(n <span class="op">-</span> <span class="dv">2</span>)</span>
-<span id="cb66-6"><a></a></span>
-<span id="cb66-7"><a></a>fibonacci(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
-<pre><code>21</code></pre>
-</div>
-</div>
-<p><br>
-</p>
-<div id="bd8abe6d" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a></a>[fibonacci(n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
-<pre><code>[1, 1, 2, 3, 5, 8, 13, 21]</code></pre>
-</div>
-</div>
-</section>
-<section id="soma-acumulada" class="slide level2">
-<h2>Soma acumulada</h2>
-<p><br>
-</p>
-<div id="07295e54" class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a></a><span class="kw">def</span> cumsum(x):</span>
-<span id="cb70-2"><a></a>  <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
-<span id="cb70-3"><a></a>    <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb70-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb70-5"><a></a>    <span class="cf">return</span> x <span class="op">+</span> cumsum(x <span class="op">-</span> <span class="dv">1</span>)</span>
-<span id="cb70-6"><a></a></span>
-<span id="cb70-7"><a></a>cumsum(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
-<pre><code>15</code></pre>
-</div>
+<div id="8c6a0832" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a><span class="im">from</span> pickle <span class="im">import</span> load</span>
+<span id="cb78-2"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'data.pickle'</span>, <span class="st">'rb'</span>) <span class="im">as</span> f:</span>
+<span id="cb78-3"><a></a>  data <span class="op">=</span> load(f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
@@ -1797,7 +1901,7 @@ W10=
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/unasp-aulas\.github\.io\/construir-algoritmos\/");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

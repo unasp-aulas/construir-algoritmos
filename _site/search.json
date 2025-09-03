@@ -28,11 +28,11 @@
     "text": "Repetições\n\n\nAcumuladores\n\n\n\nUm acumulador é uma variável que acumula valores durante as iterações de um laço\n\n\n\nExercício\n\nReconstrua a rotina para que ela acumule o produto da mesma sequência gerada"
   },
   {
-    "objectID": "docs/index.html#estrutura-de-dados1",
-    "href": "docs/index.html#estrutura-de-dados1",
+    "objectID": "docs/index.html#estrutura-de-dados",
+    "href": "docs/index.html#estrutura-de-dados",
     "title": "Construção de Algorítmos e  Programação",
-    "section": "Estrutura de dados1",
-    "text": "Estrutura de dados1\n\n\n\nAs estruturas de dados servem para organizar, manipular e acessar dados em diversos formatos\n\nVer https://docs.python.org/3/tutorial/datastructures.html"
+    "section": "Estrutura de dados 1",
+    "text": "Estrutura de dados 1\n\n\n\nAs estruturas de dados servem para organizar, manipular e acessar dados em diversos formatos\n\nVer https://docs.python.org/3/tutorial/datastructures.html"
   },
   {
     "objectID": "docs/index.html#lista",
@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[2], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[36], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -70,6 +70,13 @@
     "text": "Conjunto\n\n\n\nUm set (conjunto) é uma coleção não ordenada e mutável de elementos únicos. Ele remove automaticamente duplicados e é eficiente para operações como verificação de pertinência de um elemento ou a realização de operações matemáticas de conjuntos, como união ou interseção.\n\n\n\nA = {1, 2, 3}\nB = {3, 4, 5}\nA | B\nA & B\nA - B\nB - A\nA ^ B\n2 in A\n\n{1, 2, 3, 4, 5}\n\n\n{3}\n\n\n{1, 2}\n\n\n{4, 5}\n\n\n{1, 2, 4, 5}\n\n\nTrue"
   },
   {
+    "objectID": "docs/index.html#pesquisa-sequencial",
+    "href": "docs/index.html#pesquisa-sequencial",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Pesquisa sequencial",
+    "text": "Pesquisa sequencial\n\n\nFazendo uma busca sequencial de um item dentro da lista.\n\ndef pesquisa_sequencial(lista, item):\n  for i, j in enumerate(lista):\n    if j == item:\n      return i\n\nUm exemplo\n\npesquisa_sequencial([7, 9, 12, 15, 16, 18, 22], 15)\n\n3"
+  },
+  {
     "objectID": "docs/index.html#pesquisa-binária",
     "href": "docs/index.html#pesquisa-binária",
     "title": "Construção de Algorítmos e  Programação",
@@ -81,7 +88,28 @@
     "href": "docs/index.html#pesquisa-binária-1",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Pesquisa binária",
-    "text": "Pesquisa binária\n\n\n\nComece com os índices do início e do fim da lista.\nEncontre o elemento do meio.\nCompare o valor do meio com o valor procurado:\n\n\nSe for igual, encontrou!\nSe o valor procurado for menor, repita a busca na metade esquerda.\nSe for maior, repita na metade direita.\n\n\nRepita até encontrar o valor ou até que a sublista esteja vazia.\n\n\ndef pesquisa_binaria(lista, item):\n  baixo = 0\n  alto = len(lista) - 1\n\n  while baixo &lt;= alto:\n    meio = (baixo + alto)/2\n    chute = lista[meio]\n    if chute == item:\n      return meio\n    if chute &gt; item:\n      alto = meio - 1\n    else:\n      baixo = meio + 1\n  return None"
+    "text": "Pesquisa binária\n\n\n\nComece com os índices do início e do fim da lista.\nEncontre o elemento do meio.\nCompare o valor do meio com o valor procurado:\n\n\nSe for igual, encontrou!\nSe o valor procurado for menor, repita a busca na metade esquerda.\nSe for maior, repita na metade direita.\n\n\nRepita até encontrar o valor ou até que a sublista esteja vazia.\n\n\ndef pesquisa_binaria(lista, item):\n  baixo = 0\n  alto = len(lista) - 1\n\n  while baixo &lt;= alto:\n    meio = (baixo + alto) // 2\n    chute = lista[meio]\n    if chute == item:\n      return meio\n    elif chute &gt; item:\n      alto = meio - 1\n    else:\n      baixo = meio + 1\n  return None"
+  },
+  {
+    "objectID": "docs/index.html#complexidade-de-tempo-do-algoritmo",
+    "href": "docs/index.html#complexidade-de-tempo-do-algoritmo",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Complexidade de tempo do algoritmo",
+    "text": "Complexidade de tempo do algoritmo\n\n\nA complexidade Big O (ou notação assintótica) é uma forma de descrever o comportamento de um algoritmo em termos de tempo ou espaço conforme o tamanho da entrada cresce. Ela não mede o tempo exato de execução, mas sim como o tempo cresce com o aumento da entrada.\n\n\nImagine que você tem um algoritmo que precisa processar uma lista de números. A complexidade Big O te diz quantas operações/tentativas (aproximadamente) ele vai fazer à medida que a lista cresce."
+  },
+  {
+    "objectID": "docs/index.html#complexidade-de-tempo-do-algoritmo-1",
+    "href": "docs/index.html#complexidade-de-tempo-do-algoritmo-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Complexidade de tempo do algoritmo",
+    "text": "Complexidade de tempo do algoritmo\n\n\nNa pesquisa binária, a cada passo você divide a lista pela metade. Isso significa que o número de passos cresce logaritmicamente com o tamanho da lista ou \\(O(log(n))\\):\n\nLista com 8 elementos → no máximo 3 passos (porque \\(log_2 8 = 3\\))\nLista com 1000000 elementos → no máximo 20 passos (porque \\(log_2 1000000 \\approx 20\\))\n\n\n\nNa pesquisa sequencial, o número de tentativas é igual ao número de elementos na lista \\(O(n)\\)\n\nLista com 8 elementos → no máximo 8 passos\nLista com 1000000 elementos → no máximo 1000000 passos"
+  },
+  {
+    "objectID": "docs/index.html#exercícios-com-pesquisa-binária",
+    "href": "docs/index.html#exercícios-com-pesquisa-binária",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Exercícios com pesquisa binária",
+    "text": "Exercícios com pesquisa binária\n\n\n\nQuantos números primos são menores que 67\n\nprimos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n\nQual o nome associado ao número 256\n\nlista = [\n    (3, 'Ana'), (10, 'Bruno'), (15, 'Carlos'), (18, 'Daniela'), (19, 'Eduardo'),\n    (28, 'Fernanda'), (33, 'Gustavo'), (35, 'Helena'), (43, 'Igor'), (48, 'Juliana'),\n    (58, 'Kleber'), (83, 'Larissa'), (84, 'Marcos'), (86, 'Natália'), (97, 'Otávio'),\n    (104, 'Patrícia'), (106, 'Rafael'), (115, 'Sabrina'), (120, 'Tiago'), (122, 'Vanessa'),\n    (127, 'Amanda'), (143, 'Breno'), (147, 'Camila'), (149, 'Diego'), (151, 'Eliane'),\n    (175, 'Fabiano'), (179, 'Gabriela'), (184, 'Henrique'), (187, 'Isabela'), (194, 'João'),\n    (199, 'Karen'), (201, 'Leonardo'), (211, 'Mirela'), (213, 'Nicolas'), (232, 'Olívia'),\n    (241, 'Pedro'), (244, 'Queila'), (246, 'Rodrigo'), (256, 'Simone'), (258, 'Túlio'),\n    (259, 'Ursula'), (261, 'Victor'), (269, 'Wesley'), (273, 'Xênia'), (278, 'Yasmin'),\n    (280, 'Zeca'), (288, 'Alana'), (291, 'Caio'), (292, 'Diana'), (294, 'Fábio')\n]"
   },
   {
     "objectID": "docs/index.html#ordenação-por-seleção",
@@ -95,14 +123,56 @@
     "href": "docs/index.html#ordenação-por-seleção-1",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Ordenação por seleção",
-    "text": "Ordenação por seleção\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array."
+    "text": "Ordenação por seleção\n\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\nprint(ordenacaoporSelecao([10, 5, 2, 3]))\n\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array.\n\n\n\n\n[2, 3, 5, 10]"
+  },
+  {
+    "objectID": "docs/index.html#recursividade",
+    "href": "docs/index.html#recursividade",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Recursividade",
+    "text": "Recursividade\n\n\n\nRecursividade é um mecanismo de programação que permite que uma função ou objeto se refira a si mesmo. Em outras palavras, uma função recursiva é uma função que se define em termos de si mesma."
+  },
+  {
+    "objectID": "docs/index.html#fatorial",
+    "href": "docs/index.html#fatorial",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Fatorial",
+    "text": "Fatorial\n\n\n\ndef factorial(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return n * factorial(n - 1)\n\nfactorial(5)\n\n120"
+  },
+  {
+    "objectID": "docs/index.html#fibonacci",
+    "href": "docs/index.html#fibonacci",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Fibonacci",
+    "text": "Fibonacci\n\n\n\ndef fibonacci(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return fibonacci(n - 1) + fibonacci(n - 2)\n\nfibonacci(7)\n\n21\n\n\n\n\n\n[fibonacci(n) for n in range(8)]\n\n[1, 1, 2, 3, 5, 8, 13, 21]"
+  },
+  {
+    "objectID": "docs/index.html#soma-acumulada",
+    "href": "docs/index.html#soma-acumulada",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Soma acumulada",
+    "text": "Soma acumulada\n\n\n\ndef cumsum(x):\n  if x &lt; 0:\n    return 0\n  else:\n    return x + cumsum(x - 1)\n\ncumsum(5)\n\n15"
+  },
+  {
+    "objectID": "docs/index.html#quicksort",
+    "href": "docs/index.html#quicksort",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Quicksort",
+    "text": "Quicksort\n\n\n\nO quicksort é um algoritmo de ordenação. Este algoritmo é muito mais rápido do que a ordenação por seleção e é muito utilizado na prática. Por exemplo, a biblioteca padrão da linguagem C tem uma função chamada qsort que é uma implementação do quicksort. Este algorítmo utiliza a estratégia dividir para conquistar.\n\nQual é o array mais simples que um algoritmo de ordenação pode ordenar? [] ← array vazio e [20] ← array com um elemento."
+  },
+  {
+    "objectID": "docs/index.html#quicksort-1",
+    "href": "docs/index.html#quicksort-1",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Quicksort",
+    "text": "Quicksort\n\n\n\ndef quicksort(arr):\n  if len(arr) &lt; 2:\n    return arr\n  else:\n    pivo = arr[0]\n    menores = [i for i in arr[1:] if i &lt;= pivo]\n    maiores = [i for i in arr[1:] if i &gt; pivo]\n    return quicksort(menores) + [pivo] + quicksort(maiores)\n\nprint(quicksort([10, 5, 2, 3]))\n\n[2, 3, 5, 10]"
   },
   {
     "objectID": "docs/index.html#consultando-o-endereço-através-do-cep",
     "href": "docs/index.html#consultando-o-endereço-através-do-cep",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Consultando o endereço através do CEP",
-    "text": "Consultando o endereço através do CEP\nhttps://viacep.com.br/\n\n\n\nimport requests\n\n# Função que fará requisição à API\ndef consulta_cep(cep):\n  url = f\"https://viacep.com.br/ws/{cep}/json/\"\n  res = requests.get(url)\n  res = res.json()\n  return (res['logradouro'], res['uf'])\n\n# Lista de CEPs para consulta\nlista_cep = [\"13186642\",\n             \"13178574\",\n             \"13188020\",\n             \"13184321\",\n             \"20720293\"]\n\n[consulta_cep(cep)[0] for cep in lista_cep if consulta_cep(cep)[1] == \"SP\"]\n\n['Rua Joaquim Marcelino Leite',\n 'Avenida Cabo Pedro Hoffman',\n 'Rua José de Anchieta',\n 'Rua Bernardino de Almeida']"
+    "text": "Consultando o endereço através do CEP\nhttps://viacep.com.br/\n\n\nimport requests\n\n# Função que fará requisição à API\ndef consulta_cep(cep):\n  url = f\"https://viacep.com.br/ws/{cep}/json/\"\n  res = requests.get(url)\n  res = res.json()\n  return (res['logradouro'], res['uf'])\n\n# Lista de CEPs para consulta\nlista_cep = [\"13186642\",\n             \"13178574\",\n             \"13188020\",\n             \"13184321\",\n             \"20720293\"]\n\n[consulta_cep(cep)[0] for cep in lista_cep if consulta_cep(cep)[1] == \"SP\"]"
   },
   {
     "objectID": "docs/index.html#consultado-a-cotação-do-dólar",
@@ -285,26 +355,5 @@
     "title": "Construção de Algorítmos e  Programação",
     "section": "Escrita e leitura de arquivos com estruturas Python",
     "text": "Escrita e leitura de arquivos com estruturas Python\n\n\nEscrita\n\nfrom pickle import dump\ndata = {\n    'a': [1, 2.0, 3+4j],\n    'b': (\"character string\"),\n    'c': {None, True, False}\n}\n\nwith open('data.pickle', 'wb') as f:\n  dump(data, f)\n\n\n\nLeitura\n\nfrom pickle import load\nwith open('data.pickle', 'rb') as f:\n  data = load(f)"
-  },
-  {
-    "objectID": "docs/index.html#fatorial",
-    "href": "docs/index.html#fatorial",
-    "title": "Construção de Algorítmos e  Programação",
-    "section": "Fatorial",
-    "text": "Fatorial\n\n\n\ndef factorial(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return n * factorial(n - 1)\n\nfactorial(5)\n\n120"
-  },
-  {
-    "objectID": "docs/index.html#fibonacci",
-    "href": "docs/index.html#fibonacci",
-    "title": "Construção de Algorítmos e  Programação",
-    "section": "Fibonacci",
-    "text": "Fibonacci\n\n\n\ndef fibonacci(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return fibonacci(n - 1) + fibonacci(n - 2)\n\nfibonacci(7)\n\n21\n\n\n\n\n\n[fibonacci(n) for n in range(8)]\n\n[1, 1, 2, 3, 5, 8, 13, 21]"
-  },
-  {
-    "objectID": "docs/index.html#soma-acumulada",
-    "href": "docs/index.html#soma-acumulada",
-    "title": "Construção de Algorítmos e  Programação",
-    "section": "Soma acumulada",
-    "text": "Soma acumulada\n\n\n\ndef cumsum(x):\n  if x &lt; 0:\n    return 0\n  else:\n    return x + cumsum(x - 1)\n\ncumsum(5)\n\n15"
   }
 ]
