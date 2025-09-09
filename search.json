@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[2], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[36], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -105,6 +105,13 @@
     "text": "Complexidade de tempo do algoritmo\n\n\nNa pesquisa binária, a cada passo você divide a lista pela metade. Isso significa que o número de passos cresce logaritmicamente com o tamanho da lista ou \\(O(log(n))\\):\n\nLista com 8 elementos → no máximo 3 passos (porque \\(log_2 8 = 3\\))\nLista com 1000000 elementos → no máximo 20 passos (porque \\(log_2 1000000 \\approx 20\\))\n\n\n\nNa pesquisa sequencial, o número de tentativas é igual ao número de elementos na lista \\(O(n)\\)\n\nLista com 8 elementos → no máximo 8 passos\nLista com 1000000 elementos → no máximo 1000000 passos"
   },
   {
+    "objectID": "docs/index.html#por-que-ologn",
+    "href": "docs/index.html#por-que-ologn",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Por que \\(O(log(n))\\)?",
+    "text": "Por que \\(O(log(n))\\)?\n\n\n\nTamanho inicial da lista: \\(n\\)\nApós 1 passo: \\(\\frac{n}{2}\\)\nApós 2 passos \\(\\frac{n}{4} = \\frac{n}{2^2}\\)\nApós 3 passos \\(\\frac{n}{8} = \\frac{n}{2^3}\\)\nApós \\(k\\) passos \\(\\frac{n}{2^k}\\)\n\nQueremos saber quantos passos \\(k\\) são necessários para que (igualamos a 1 porque queremos saber quantos passos são necessários para que no final só tenha 1 elemento):\n\\[\\frac{n}{2^k}=1\\]\n\\[n=2^k \\Rightarrow log_2(n) = log_2(2^k)=k\\]"
+  },
+  {
     "objectID": "docs/index.html#exercícios-com-pesquisa-binária",
     "href": "docs/index.html#exercícios-com-pesquisa-binária",
     "title": "Construção de Algorítmos e  Programação",
@@ -123,7 +130,7 @@
     "href": "docs/index.html#ordenação-por-seleção-1",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Ordenação por seleção",
-    "text": "Ordenação por seleção\n\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\nprint(ordenacaoporSelecao([10, 5, 2, 3]))\n\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array.\n\n\n\n\n[2, 3, 5, 10]"
+    "text": "Ordenação por seleção\n\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\nprint(ordenacaoporSelecao([10, 5, 2, 3]))\n\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array.\n\n\n\n\n[2, 3, 5, 10]\n\n\n\nComplexidade O(\\(n^2\\)): O algoritmo precisa percorrer todos os elementos em cada uma de suas iterações para encontrar o próximo menor elemento. A complexidade de tempo é dominada pelo número de comparações realizadas pelos loops aninhados, que cresce quadraticamente com o tamanho da lista (n)"
   },
   {
     "objectID": "docs/index.html#recursividade",
@@ -166,6 +173,13 @@
     "title": "Construção de Algorítmos e  Programação",
     "section": "Quicksort",
     "text": "Quicksort\n\n\n\ndef quicksort(arr):\n  if len(arr) &lt; 2:\n    return arr\n  else:\n    pivo = arr[0]\n    menores = [i for i in arr[1:] if i &lt;= pivo]\n    maiores = [i for i in arr[1:] if i &gt; pivo]\n    return quicksort(menores) + [pivo] + quicksort(maiores)\n\nprint(quicksort([10, 5, 2, 3]))\n\n[2, 3, 5, 10]"
+  },
+  {
+    "objectID": "docs/index.html#complexidade-do-quicksort",
+    "href": "docs/index.html#complexidade-do-quicksort",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Complexidade do Quicksort",
+    "text": "Complexidade do Quicksort\nA complexidade do Quicksort varia conforme a escolha do pivô e a distribuição dos dados. Em média, o algoritmo apresenta uma complexidade de tempo \\(O(n log_2(n))\\), considerada ideal. Esse desempenho ocorre quando o pivô divide o array em duas partes aproximadamente iguais, permitindo que cada chamada recursiva processe subarrays menores de forma eficiente. Por outro lado, o pior caso acontece quando o pivô escolhido é o primeiro ou o último elemento e não realiza uma divisão equilibrada dos dados. Isso gera partições muito desbalanceadas, resultando em uma complexidade de tempo \\(O(n^2)\\). Nessa situação, o algoritmo precisa realizar muitas comparações e chamadas recursivas, o que compromete significativamente sua performance."
   },
   {
     "objectID": "docs/index.html#consultando-o-endereço-através-do-cep",
