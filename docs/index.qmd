@@ -314,6 +314,22 @@ Na pesquisa sequencial, o número de tentativas é igual ao número de elementos
 - Lista com 8 elementos &#8594; no máximo 8 passos
 - Lista com 1000000 elementos &#8594; no máximo 1000000 passos
 
+## Por que $O(log(n))$?
+
+\
+
+1. Tamanho inicial da lista: $n$
+2. Após 1 passo: $\frac{n}{2}$
+3. Após 2 passos $\frac{n}{4} = \frac{n}{2^2}$
+4. Após 3 passos $\frac{n}{8} = \frac{n}{2^3}$
+5. Após $k$ passos $\frac{n}{2^k}$
+
+Queremos saber quantos passos $k$ são necessários para que (igualamos a 1 porque queremos saber quantos passos são necessários para que no final só tenha 1 elemento):
+
+$$\frac{n}{2^k}=1$$
+
+$$n=2^k \Rightarrow log_2(n) = log_2(2^k)=k$$
+
 ## Exercícios com pesquisa binária
 
 \
@@ -339,8 +355,6 @@ lista = [
     (280, 'Zeca'), (288, 'Alana'), (291, 'Caio'), (292, 'Diana'), (294, 'Fábio')
 ]
 ```
-
-
 
 ## Ordenação por seleção
 
@@ -407,6 +421,8 @@ print(ordenacaoporSelecao([10, 5, 2, 3]))
 2. Encontra o menor elemento do array e adiciona ao novo array.
 :::
 :::
+
+Complexidade O($n^2$): O algoritmo precisa percorrer todos os elementos em cada uma de suas iterações para encontrar o próximo menor elemento. A complexidade de tempo é dominada pelo número de comparações realizadas pelos loops aninhados, que cresce quadraticamente com o tamanho da lista (n)
 
 ## Recursividade
 
@@ -488,6 +504,10 @@ def quicksort(arr):
 print(quicksort([10, 5, 2, 3]))
 ```
 
+## Complexidade do Quicksort
+
+A complexidade do Quicksort varia conforme a escolha do pivô e a distribuição dos dados. [Em média, o algoritmo apresenta uma complexidade de tempo $O(n log_2(n))$, considerada ideal. Esse desempenho ocorre quando o pivô divide o array em duas partes aproximadamente iguais]{.mark}, permitindo que cada chamada recursiva processe subarrays menores de forma eficiente.
+Por outro lado, [o pior caso acontece quando o pivô escolhido é o primeiro ou o último elemento e não realiza uma divisão equilibrada dos dados]{.mark}. Isso gera partições muito desbalanceadas, resultando em uma complexidade de tempo $O(n^2)$. Nessa situação, o algoritmo precisa realizar muitas comparações e chamadas recursivas, o que compromete significativamente sua performance.
 
 # Aplicações
 

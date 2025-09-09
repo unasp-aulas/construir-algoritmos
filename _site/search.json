@@ -105,11 +105,18 @@
     "text": "Complexidade de tempo do algoritmo\n\n\nNa pesquisa binária, a cada passo você divide a lista pela metade. Isso significa que o número de passos cresce logaritmicamente com o tamanho da lista ou \\(O(log(n))\\):\n\nLista com 8 elementos → no máximo 3 passos (porque \\(log_2 8 = 3\\))\nLista com 1000000 elementos → no máximo 20 passos (porque \\(log_2 1000000 \\approx 20\\))\n\n\n\nNa pesquisa sequencial, o número de tentativas é igual ao número de elementos na lista \\(O(n)\\)\n\nLista com 8 elementos → no máximo 8 passos\nLista com 1000000 elementos → no máximo 1000000 passos"
   },
   {
+    "objectID": "docs/index.html#por-que-ologn",
+    "href": "docs/index.html#por-que-ologn",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Por que \\(O(log(n))\\)?",
+    "text": "Por que \\(O(log(n))\\)?\n\n\n\nTamanho inicial da lista: \\(n\\)\nApós 1 passo: \\(\\frac{n}{2}\\)\nApós 2 passos \\(\\frac{n}{4} = \\frac{n}{2^2}\\)\nApós 3 passos \\(\\frac{n}{8} = \\frac{n}{2^3}\\)\nApós \\(k\\) passos \\(\\frac{n}{2^k}\\)\n\nQueremos saber quantos passos \\(k\\) são necessários para que (igualamos a 1 porque queremos saber quantos passos são necessários para que no final só tenha 1 elemento):\n\\[\\frac{n}{2^k}=1\\]\n\\[n=2^k \\Rightarrow log_2(n) = log_2(2^k)=k\\]"
+  },
+  {
     "objectID": "docs/index.html#exercícios-com-pesquisa-binária",
     "href": "docs/index.html#exercícios-com-pesquisa-binária",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Exercícios com pesquisa binária",
-    "text": "Exercícios com pesquisa binária\n\n\n\nQuantos números primos são menores que 67\n\nprimos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n\nQual o nome associado ao número 256\n\nlista = [\n    (3, 'Ana'), (10, 'Bruno'), (15, 'Carlos'), (18, 'Daniela'), (19, 'Eduardo'),\n    (28, 'Fernanda'), (33, 'Gustavo'), (35, 'Helena'), (43, 'Igor'), (48, 'Juliana'),\n    (58, 'Kleber'), (83, 'Larissa'), (84, 'Marcos'), (86, 'Natália'), (97, 'Otávio'),\n    (104, 'Patrícia'), (106, 'Rafael'), (115, 'Sabrina'), (120, 'Tiago'), (122, 'Vanessa'),\n    (127, 'Amanda'), (143, 'Breno'), (147, 'Camila'), (149, 'Diego'), (151, 'Eliane'),\n    (175, 'Fabiano'), (179, 'Gabriela'), (184, 'Henrique'), (187, 'Isabela'), (194, 'João'),\n    (199, 'Karen'), (201, 'Leonardo'), (211, 'Mirela'), (213, 'Nicolas'), (232, 'Olívia'),\n    (241, 'Pedro'), (244, 'Queila'), (246, 'Rodrigo'), (256, 'Simone'), (258, 'Túlio'),\n    (259, 'Ursula'), (261, 'Victor'), (269, 'Wesley'), (273, 'Xênia'), (278, 'Yasmin'),\n    (280, 'Zeca'), (288, 'Alana'), (291, 'Caio'), (292, 'Diana'), (294, 'Fábio')\n]"
+    "text": "Exercícios com pesquisa binária\n\n\n\nQuantos números primos são menores que 67\n\nprimos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n\nQual o nome associado ao número 256 e quantas tentativas foram feitas? Quantas tentativas seriam em uma pesquisa sequencial?\n\nlista = [\n    (3, 'Ana'), (10, 'Bruno'), (15, 'Carlos'), (18, 'Daniela'), (19, 'Eduardo'),\n    (28, 'Fernanda'), (33, 'Gustavo'), (35, 'Helena'), (43, 'Igor'), (48, 'Juliana'),\n    (58, 'Kleber'), (83, 'Larissa'), (84, 'Marcos'), (86, 'Natália'), (97, 'Otávio'),\n    (104, 'Patrícia'), (106, 'Rafael'), (115, 'Sabrina'), (120, 'Tiago'), (122, 'Vanessa'),\n    (127, 'Amanda'), (143, 'Breno'), (147, 'Camila'), (149, 'Diego'), (151, 'Eliane'),\n    (175, 'Fabiano'), (179, 'Gabriela'), (184, 'Henrique'), (187, 'Isabela'), (194, 'João'),\n    (199, 'Karen'), (201, 'Leonardo'), (211, 'Mirela'), (213, 'Nicolas'), (232, 'Olívia'),\n    (241, 'Pedro'), (244, 'Queila'), (246, 'Rodrigo'), (256, 'Simone'), (258, 'Túlio'),\n    (259, 'Ursula'), (261, 'Victor'), (269, 'Wesley'), (273, 'Xênia'), (278, 'Yasmin'),\n    (280, 'Zeca'), (288, 'Alana'), (291, 'Caio'), (292, 'Diana'), (294, 'Fábio')\n]"
   },
   {
     "objectID": "docs/index.html#ordenação-por-seleção",
@@ -123,7 +130,7 @@
     "href": "docs/index.html#ordenação-por-seleção-1",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Ordenação por seleção",
-    "text": "Ordenação por seleção\n\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\nprint(ordenacaoporSelecao([10, 5, 2, 3]))\n\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array.\n\n\n\n\n[2, 3, 5, 10]"
+    "text": "Ordenação por seleção\n\n\n\n\n\ndef buscaMenor(arr):\n1  menor = arr[0]\n2  menor_indice = 0\n  for i in range(1, len(arr)):\n    if arr[i] &lt; menor:\n      menor = arr[i]\n      menor_indice = i\n  return menor_indice\n\n\n1\n\nArmazena o menor valor.\n\n2\n\nArmazena o índice do menor valor.\n\n\n\n\n\n\n1def ordenacaoporSelecao(arr):\n  novoArr = []\n  for i in range(len(arr)):\n2    menor = buscaMenor(arr)\n    novoArr.append(arr.pop(menor))\n  return novoArr\n\nprint(ordenacaoporSelecao([10, 5, 2, 3]))\n\n\n1\n\nOrdenação em um array.\n\n2\n\nEncontra o menor elemento do array e adiciona ao novo array.\n\n\n\n\n[2, 3, 5, 10]\n\n\n\nComplexidade O(\\(n^2\\)): O algoritmo precisa percorrer todos os elementos em cada uma de suas iterações para encontrar o próximo menor elemento. A complexidade de tempo é dominada pelo número de comparações realizadas pelos loops aninhados, que cresce quadraticamente com o tamanho da lista (n)"
   },
   {
     "objectID": "docs/index.html#recursividade",
@@ -166,6 +173,13 @@
     "title": "Construção de Algorítmos e  Programação",
     "section": "Quicksort",
     "text": "Quicksort\n\n\n\ndef quicksort(arr):\n  if len(arr) &lt; 2:\n    return arr\n  else:\n    pivo = arr[0]\n    menores = [i for i in arr[1:] if i &lt;= pivo]\n    maiores = [i for i in arr[1:] if i &gt; pivo]\n    return quicksort(menores) + [pivo] + quicksort(maiores)\n\nprint(quicksort([10, 5, 2, 3]))\n\n[2, 3, 5, 10]"
+  },
+  {
+    "objectID": "docs/index.html#complexidade-do-quicksort",
+    "href": "docs/index.html#complexidade-do-quicksort",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Complexidade do Quicksort",
+    "text": "Complexidade do Quicksort\nA complexidade do Quicksort varia conforme a escolha do pivô e a distribuição dos dados. Em média, o algoritmo apresenta uma complexidade de tempo \\(O(n log_2(n))\\), considerada ideal. Esse desempenho ocorre quando o pivô divide o array em duas partes aproximadamente iguais, permitindo que cada chamada recursiva processe subarrays menores de forma eficiente. Por outro lado, o pior caso acontece quando o pivô escolhido é o primeiro ou o último elemento e não realiza uma divisão equilibrada dos dados. Isso gera partições muito desbalanceadas, resultando em uma complexidade de tempo \\(O(n^2)\\). Nessa situação, o algoritmo precisa realizar muitas comparações e chamadas recursivas, o que compromete significativamente sua performance."
   },
   {
     "objectID": "docs/index.html#consultando-o-endereço-através-do-cep",
