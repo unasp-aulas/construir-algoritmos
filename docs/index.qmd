@@ -651,9 +651,10 @@ from dotenv import load_dotenv
 load_dotenv("../.env")  # <1>
 
 s = requests.Session()  # <2>
-s.post( # <3>
+res = s.post( # <3>
     f"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}" # <3>
 )  # <3>
+print(res.text)
 ```
 
 1. Ler o arquivo tendo o token como variável de ambiente
@@ -662,7 +663,7 @@ s.post( # <3>
 
 ## Monitoramento de frota de ônibus
 
-### Busca por linhas segundo termos
+### Busca por linhas segundo termos^[Lista de linhas <https://www.sptrans.com.br/>]
 
 \
 
