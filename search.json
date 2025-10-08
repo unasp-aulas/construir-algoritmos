@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[36], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[2], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -235,14 +235,14 @@
     "href": "docs/index.html#monitoramento-de-frota-de-ônibus",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Monitoramento de frota de ônibus",
-    "text": "Monitoramento de frota de ônibus\nAutenticação\n\n\n\nimport os\nimport requests\nfrom dotenv import load_dotenv\n\n1load_dotenv(\"../.env\")\n\n2s = requests.Session()\n3s.post(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}\"\n)\n\n\n1\n\nLer o arquivo tendo o token como variável de ambiente\n\n2\n\nPersistir uma sessão após autenticar\n\n3\n\nFazer uma requisição com post incluindo o token\n\n\n\n\nTrue\n\n\n&lt;Response [200]&gt;"
+    "text": "Monitoramento de frota de ônibus\nAutenticação\n\n\n\nimport os\nimport requests\nfrom dotenv import load_dotenv\n\n1load_dotenv(\"../.env\")\n\n2s = requests.Session()\n3res = s.post(\n    f\"http://api.olhovivo.sptrans.com.br/v2.1/Login/Autenticar?token={os.getenv('SPTRANS_TOKEN')}\"\n)\nprint(res.text)\n\n\n1\n\nLer o arquivo tendo o token como variável de ambiente\n\n2\n\nPersistir uma sessão após autenticar\n\n3\n\nFazer uma requisição com post incluindo o token\n\n\n\n\nTrue\n\n\ntrue"
   },
   {
     "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-1",
     "href": "docs/index.html#monitoramento-de-frota-de-ônibus-1",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Monitoramento de frota de ônibus",
-    "text": "Monitoramento de frota de ônibus\nBusca por linhas segundo termos\n\n\n\n1linhas_lapa = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa\"\n)\nlinhas_lapa = linhas_lapa.json()\n2linhas_lapa[:3]\n\n\n1\n\nUtilizando o método get para requisitar as linhas de ônibus segundo a busca pelo termo “Lapa”\n\n2\n\nMostrando uma lista com a 3 primeitas linhas encontradas\n\n\n\n\n[{'cl': 841,\n  'lc': False,\n  'lt': '118Y',\n  'sl': 1,\n  'tl': 10,\n  'tp': 'LAPA',\n  'ts': 'LAUZANE PAULISTA'},\n {'cl': 33609,\n  'lc': False,\n  'lt': '118Y',\n  'sl': 2,\n  'tl': 10,\n  'tp': 'LAPA',\n  'ts': 'LAUZANE PAULISTA'},\n {'cl': 2273,\n  'lc': False,\n  'lt': '119L',\n  'sl': 1,\n  'tl': 10,\n  'tp': 'TERM. LAPA',\n  'ts': 'VL. SULINA'}]"
+    "text": "Monitoramento de frota de ônibus\nBusca por linhas segundo termos1\n\n\n\n1linhas_lapa = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa\"\n)\nlinhas_lapa = linhas_lapa.json()\n2linhas_lapa[:3]\n\n\n1\n\nUtilizando o método get para requisitar as linhas de ônibus segundo a busca pelo termo “Lapa”\n\n2\n\nMostrando uma lista com a 3 primeitas linhas encontradas\n\n\n\n\n[{'cl': 841,\n  'lc': False,\n  'lt': '118Y',\n  'sl': 1,\n  'tl': 10,\n  'tp': 'LAPA',\n  'ts': 'LAUZANE PAULISTA'},\n {'cl': 33609,\n  'lc': False,\n  'lt': '118Y',\n  'sl': 2,\n  'tl': 10,\n  'tp': 'LAPA',\n  'ts': 'LAUZANE PAULISTA'},\n {'cl': 2273,\n  'lc': False,\n  'lt': '119L',\n  'sl': 1,\n  'tl': 10,\n  'tp': 'TERM. LAPA',\n  'ts': 'VL. SULINA'}]\n\n\nLista de linhas https://www.sptrans.com.br/"
   },
   {
     "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-2",
