@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[2], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[36], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -285,6 +285,13 @@
     "title": "Construção de Algorítmos e  Programação",
     "section": "Bot no Telegram",
     "text": "Bot no Telegram\nEnviando mensagem\n\n\nrequests.post(\n        url=f\"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/sendMessage\",\n        data={\"chat_id\": 1042885840, \"text\": \"Olá tudo bem?\"}\n    ).json()\n{'ok': True,\n 'result': {'message_id': 10,\n  'from': {'id': 7627305412,\n   'is_bot': True,\n   'first_name': 'thop',\n   'username': 'th0pbot'},\n  'chat': {'id': 1042885840,\n   'first_name': 'Thiago',\n   'last_name': 'Pires',\n   'username': 'th1460',\n   'type': 'private'},\n  'date': 1726968004,\n  'text': 'Olá tudo bem?'}}"
+  },
+  {
+    "objectID": "docs/index.html#bot-telegram",
+    "href": "docs/index.html#bot-telegram",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Bot Telegram",
+    "text": "Bot Telegram\nCalculadora\nimport requests\nimport os\nfrom dotenv import load_dotenv\n\nload_dotenv(\".env\")\n\ndef updates():\n  updates = requests.get(f\"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/getUpdates?offset=-1\")\n  updates = updates.json()\n  last_update = updates[\"result\"][0]\n  if last_update:\n    last_date = last_update[\"message\"][\"date\"]\n  return last_update[\"message\"][\"chat\"][\"id\"], last_update[\"message\"][\"text\"], last_date\n\nlast_date = 0\nwhile True:\n  try:\n    upd = updates()\n    if upd[2] &gt; last_date:\n      id = upd[0]\n      text = eval(upd[1])\n      last_date = upd[2]\n      requests.post(\n            url=f\"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/sendMessage\",\n            data={\"chat_id\": id, \"text\": text}\n        ).json() \n  except:\n    pass"
   },
   {
     "objectID": "docs/index.html#matrizes-1",
