@@ -643,12 +643,12 @@ A [API do Olho Vivo](https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo
 
 \
 
-```{python}
+```{.python}
 import os
 import requests
 from dotenv import load_dotenv
 
-load_dotenv("../.env")  # <1>
+load_dotenv(".env")  # <1>
 
 s = requests.Session()  # <2>
 res = s.post( # <3>
@@ -661,13 +661,17 @@ print(res.text)
 2. Persistir uma sessão após autenticar
 3. Fazer uma requisição com `post` incluindo o token
 
+```
+true
+```
+
 ## Monitoramento de frota de ônibus
 
 ### Busca por linhas segundo termos^[Lista de linhas <https://www.sptrans.com.br/>]
 
 \
 
-```{python}
+```{.python}
 linhas_lapa = s.get( # <1>
     "http://api.olhovivo.sptrans.com.br/v2.1/Linha/Buscar?termosBusca=Lapa" # <1>
 )  # <1>
@@ -678,13 +682,37 @@ linhas_lapa[:3]  # <2>
 1. Utilizando o método `get` para requisitar as linhas de ônibus segundo a busca pelo termo "Lapa"
 2. Mostrando uma lista com a 3 primeitas linhas encontradas
 
+```
+[{'cl': 841,
+  'lc': False,
+  'lt': '118Y',
+  'sl': 1,
+  'tl': 10,
+  'tp': 'LAPA',
+  'ts': 'LAUZANE PAULISTA'},
+ {'cl': 33609,
+  'lc': False,
+  'lt': '118Y',
+  'sl': 2,
+  'tl': 10,
+  'tp': 'LAPA',
+  'ts': 'LAUZANE PAULISTA'},
+ {'cl': 2273,
+  'lc': False,
+  'lt': '119L',
+  'sl': 1,
+  'tl': 10,
+  'tp': 'TERM. LAPA',
+  'ts': 'VL. SULINA'}]
+```
+
 ## Monitoramento de frota de ônibus
 
 ### Busca por paradas
 
 \
 
-```{python}
+```{.python}
 res = s.get( # <1>
     "http://api.olhovivo.sptrans.com.br/v2.1/Parada/BuscarParadasPorLinha?codigoLinha=2506" # <1>
 ) # <1>
@@ -695,20 +723,57 @@ paradas[:3]  # <2>
 1. Requisição das paradas de ônibus com o nome, endereço e coordenada segundo o código da linha (as chaves `cl` na saída anterior)
 2. Lista com as informações das 3 primeiras paradas
 
+```
+[{'cp': 7014417,
+  'np': 'ANGELICA B/C',
+  'ed': 'AV   ANGELICA',
+  'py': -23.534564,
+  'px': -46.654302},
+ {'cp': 60016784,
+  'np': 'PARADA PALMEIRAS B/C',
+  'ed': 'R PADRE ANTONIO TOMAS/ AV POMPEIA',
+  'py': -23.525799,
+  'px': -46.679251},
+ {'cp': 60016786,
+  'np': 'ANTARTICA B/C',
+  'ed': 'PC SOUSA ARANHA/ VDTO ANTARTICA',
+  'py': -23.526523,
+  'px': -46.673588}]
+```
+
+## Monitoramento de frota de ônibus
+
+### Utilizando `folium` para construir mapas
+
+```{python}
+from folium import Map, Marker, Popup
+
+m = Map(location=[-22.8773542,-47.2280647], zoom_start=14)
+Marker(location=[-22.8773542,-47.2280647], popup=Popup("Estudo aqui!", max_width="100", show=True)).add_to(m)
+m.save("unasp.html")
+```
+
+\
+
+<center>
+```{=html}
+<iframe width="900" height="350" src="unasp.html"></iframe>
+```
+</center>
+
 ## Monitoramento de frota de ônibus
 
 ### Paradas de ônibus no mapa
 
 \
 
-```{python}
-# | eval: false
+```{.python}
 from folium import Map, Marker
 
 m = Map(location=[paradas[3]["py"], paradas[3]["px"]], zoom_start=14)
 for i in paradas:
     Marker(location=[i["py"], i["px"]], popup=i["np"]).add_to(m)
-m.save("2506.html")
+m.show_in_browser()
 ```
 
 \
@@ -725,8 +790,7 @@ m.save("2506.html")
 
 \
 
-```{python}
-#| eval: false
+```{.python}
 pos = s.get(
     "http://api.olhovivo.sptrans.com.br/v2.1//Posicao/Linha?codigoLinha=2506"
 )  # <1>
@@ -795,7 +859,7 @@ pos.json()
 import requests
 import os
 from dotenv import load_dotenv
-load_dotenv("../.env")
+load_dotenv(".env")
 updates = requests.get(f"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/getUpdates")
 updates = updates.json()
 updates["result"][-1]
