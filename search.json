@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[36], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[37], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -256,11 +256,18 @@
     "href": "docs/index.html#monitoramento-de-frota-de-ônibus-3",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Monitoramento de frota de ônibus",
-    "text": "Monitoramento de frota de ônibus\nParadas de ônibus no mapa\n\n\n\nfrom folium import Map, Marker\n\nm = Map(location=[paradas[3][\"py\"], paradas[3][\"px\"]], zoom_start=14)\nfor i in paradas:\n    Marker(location=[i[\"py\"], i[\"px\"]], popup=i[\"np\"]).add_to(m)\nm.save(\"2506.html\")"
+    "text": "Monitoramento de frota de ônibus\nUtilizando folium para construir mapas\n\nfrom folium import Map, Marker, Popup\n\nm = Map(location=[-22.8773542,-47.2280647], zoom_start=14)\nMarker(location=[-22.8773542,-47.2280647], popup=Popup(\"Estudo aqui!\", max_width=\"100\", show=True)).add_to(m)\nm.save(\"unasp.html\")\n\n&lt;folium.map.Marker at 0x169d09e80&gt;"
   },
   {
     "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-4",
     "href": "docs/index.html#monitoramento-de-frota-de-ônibus-4",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Monitoramento de frota de ônibus",
+    "text": "Monitoramento de frota de ônibus\nParadas de ônibus no mapa\n\n\n\nfrom folium import Map, Marker\n\nm = Map(location=[paradas[3][\"py\"], paradas[3][\"px\"]], zoom_start=14)\nfor i in paradas:\n    Marker(location=[i[\"py\"], i[\"px\"]], popup=i[\"np\"]).add_to(m)\nm.save(\"2506.html\")"
+  },
+  {
+    "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-5",
+    "href": "docs/index.html#monitoramento-de-frota-de-ônibus-5",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Monitoramento de frota de ônibus",
     "text": "Monitoramento de frota de ônibus\nPosições em tempo real\n\n\n\npos = s.get(\n    \"http://api.olhovivo.sptrans.com.br/v2.1//Posicao/Linha?codigoLinha=2506\"\n1)\npos.json()\n\n\n1\n\nRequisição da posição do ônibus segundo o código da linha informada\n\n\n\n\n{'hr': '22:06',\n 'vs': [{'p': '12783',\n   'a': True,\n   'ta': '2024-09-27T01:05:47Z',\n   'py': -23.53531725,\n   'px': -46.653005,\n   'sv': None,\n   'is': None},\n  {'p': '12534',\n   'a': True,\n   'ta': '2024-09-27T01:06:10Z',\n   'py': -23.547649,\n   'px': -46.641011500000005,\n   'sv': None,\n   'is': None},\n  {'p': '12592',\n   'a': True,\n   'ta': '2024-09-27T01:05:57Z',\n   'py': -23.5325365,\n   'px': -46.657965250000004,\n   'sv': None,\n   'is': None},\n  {'p': '12782',\n   'a': True,\n   'ta': '2024-09-27T01:05:45Z',\n   'py': -23.520449499999998,\n   'px': -46.6996115,\n   'sv': None,\n   'is': None}]}"
