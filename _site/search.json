@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[66], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[68], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -147,6 +147,13 @@
     "text": "Fatorial\n\n\n\ndef factorial(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return n * factorial(n - 1)\n\nfactorial(5)\n\n120"
   },
   {
+    "objectID": "docs/index.html#fatorial-com-for",
+    "href": "docs/index.html#fatorial-com-for",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Fatorial com for",
+    "text": "Fatorial com for\n\n\n\ndef factorial_com_for(n):\n  prod = 1\n  for i in range(1, n + 1):\n    prod *= i\n  return prod\n\nfactorial_com_for(5)\n\n120"
+  },
+  {
     "objectID": "docs/index.html#fibonacci",
     "href": "docs/index.html#fibonacci",
     "title": "Construção de Algorítmos e  Programação",
@@ -175,6 +182,13 @@
     "text": "Quicksort\n\n\n\ndef quicksort(arr):\n  if len(arr) &lt; 2:\n    return arr\n  else:\n    pivo = arr[0]\n    menores = [i for i in arr[1:] if i &lt;= pivo]\n    maiores = [i for i in arr[1:] if i &gt; pivo]\n    return quicksort(menores) + [pivo] + quicksort(maiores)\n\nprint(quicksort([10, 5, 2, 3]))\n\n[2, 3, 5, 10]"
   },
   {
+    "objectID": "docs/index.html#ordenação-decrescente",
+    "href": "docs/index.html#ordenação-decrescente",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Ordenação decrescente",
+    "text": "Ordenação decrescente\n\n\n\ndef quicksort(arr):\n  if len(arr) &lt; 2:\n    return arr\n  else:\n    pivo = arr[0]\n    menores = [i for i in arr[1:] if i &lt;= pivo]\n    maiores = [i for i in arr[1:] if i &gt; pivo]\n    return quicksort(maiores) + [pivo] + quicksort(menores)\n\nprint(quicksort([10, 5, 2, 3]))\n\n[10, 5, 3, 2]"
+  },
+  {
     "objectID": "docs/index.html#complexidade-do-quicksort",
     "href": "docs/index.html#complexidade-do-quicksort",
     "title": "Construção de Algorítmos e  Programação",
@@ -193,7 +207,7 @@
     "href": "docs/index.html#consultado-a-cotação-do-dólar",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Consultado a cotação do Dólar",
-    "text": "Consultado a cotação do Dólar\nhttps://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios\n\n\n\nimport requests\ndef cotar(data):\n  url = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json\"\n  res = requests.get(url)\n  res = res.json()\n  return res['value'][0]['cotacaoVenda']\n\ncotar(\"08282024\")\n\n5.5315\n\n\n\n\nEsta função só funciona para dias úteis excluindo sábado domingo e feriado, como poderíamos modificar para que caso faça a cotação em um dia não útil a função traga a última cotação válida."
+    "text": "Consultado a cotação do Dólar\nhttps://dadosabertos.bcb.gov.br/dataset/dolar-americano-usd-todos-os-boletins-diarios\n\n\n\nimport requests\ndef cotar(data):\n    url = fr\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra\"\n    res = requests.get(url)\n    res = res.json()\n    return res\n\ncotar(\"08-28-2024\")\n\n{'@odata.context': 'https://was-p.bcnet.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata$metadata#_CotacaoDolarDia(cotacaoCompra)',\n 'value': [{'cotacaoCompra': 5.5309}]}\n\n\n\n\nEsta função só funciona para dias úteis excluindo sábado domingo e feriado, como poderíamos modificar para que caso faça a cotação em um dia não útil a função traga a última cotação válida."
   },
   {
     "objectID": "docs/index.html#consultado-a-cotação-do-dólar-1",
@@ -214,14 +228,14 @@
     "href": "docs/index.html#consultado-a-cotação-do-dólar-3",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Consultado a cotação do Dólar",
-    "text": "Consultado a cotação do Dólar\n\n\nNos dias não úteis a API retorna uma lista vazia na chave value\n\ndata = \"09012024\"\n\nurl = f\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json\"\nres = requests.get(url)\nres = res.json()\nprint(res)\n\n{'@odata.context': 'https://was-p.bcnet.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata$metadata#_CotacaoDolarDia', 'value': []}"
+    "text": "Consultado a cotação do Dólar\n\n\nNos dias não úteis a API retorna uma lista vazia na chave value\n\ndata = \"09-01-2024\"\n\nurl = fr\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra\"\nres = requests.get(url)\nres = res.json()\nprint(res)\n\n{'@odata.context': 'https://was-p.bcnet.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata$metadata#_CotacaoDolarDia(cotacaoCompra)', 'value': []}"
   },
   {
     "objectID": "docs/index.html#consultado-a-cotação-do-dólar-4",
     "href": "docs/index.html#consultado-a-cotação-do-dólar-4",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Consultado a cotação do Dólar",
-    "text": "Consultado a cotação do Dólar\n\n\n\nimport requests\n\ndef cotar(data):\n  url = fr\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$format=json\"\n  res = requests.get(url)\n  res = res.json()\n  if res['value']: \n    return res['value'][0]['cotacaoVenda']\n  else:\n    dia_anterior = datetime.strptime(data, \"%m%d%Y\") - timedelta(1)\n    dia_anterior = datetime.strftime(dia_anterior, \"%m%d%Y\")\n    return cotar(dia_anterior)\n\n[cotar(i) for i in [\"09022024\", \"09012024\", \"08312024\", \"08302024\", \"08292024\"]]\n\n[5.623, 5.6562, 5.6562, 5.6562, 5.6358]"
+    "text": "Consultado a cotação do Dólar\n\n\n\nimport requests\n\ndef cotar(data):\n  url = fr\"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra\"\n  res = requests.get(url)\n  res = res.json()\n  if res['value']: \n    return res['value'][0]['cotacaoCompra']\n  else:\n    dia_anterior = datetime.strptime(data, \"%m-%d-%Y\") - timedelta(1)\n    dia_anterior = datetime.strftime(dia_anterior, \"%m-%d-%Y\")\n    return cotar(dia_anterior)\n\n[cotar(i) for i in [\"09-02-2024\", \"09-01-2024\", \"08-31-2024\", \"08-30-2024\", \"08-29-2024\"]]\n\n[5.6224, 5.6556, 5.6556, 5.6556, 5.6352]"
   },
   {
     "objectID": "docs/index.html#monitoramento-da-frota-de-ônibus",
@@ -256,7 +270,7 @@
     "href": "docs/index.html#monitoramento-de-frota-de-ônibus-3",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Monitoramento de frota de ônibus",
-    "text": "Monitoramento de frota de ônibus\nUtilizando folium para construir mapas\n\nfrom folium import Map, Marker, Popup\n\nm = Map(location=[-22.8773542,-47.2280647], zoom_start=14)\nMarker(location=[-22.8773542,-47.2280647], popup=Popup(\"Estudo aqui!\", max_width=\"100\", show=True)).add_to(m)\nm.save(\"unasp.html\")\n\n&lt;folium.map.Marker at 0x16a434b80&gt;"
+    "text": "Monitoramento de frota de ônibus\nUtilizando folium para construir mapas\nfrom folium import Map, Marker, Popup\n\nm = Map(location=[-22.8773542,-47.2280647], zoom_start=14)\nMarker(location=[-22.8773542,-47.2280647], popup=Popup(\"Estudo aqui!\", max_width=\"100\", show=True)).add_to(m)\nm.save(\"unasp.html\")"
   },
   {
     "objectID": "docs/index.html#monitoramento-de-frota-de-ônibus-4",

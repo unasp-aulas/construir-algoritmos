@@ -445,6 +445,20 @@ def factorial(n):
 factorial(5)
 ```
 
+## Fatorial com `for`
+
+\
+
+```{python}
+def factorial_com_for(n):
+  prod = 1
+  for i in range(1, n + 1):
+    prod *= i
+  return prod
+
+factorial_com_for(5)
+```
+
 ## Fibonacci
 
 \
@@ -504,6 +518,23 @@ def quicksort(arr):
 print(quicksort([10, 5, 2, 3]))
 ```
 
+## Ordenação decrescente
+
+\
+
+```{python}
+def quicksort(arr):
+  if len(arr) < 2:
+    return arr
+  else:
+    pivo = arr[0]
+    menores = [i for i in arr[1:] if i <= pivo]
+    maiores = [i for i in arr[1:] if i > pivo]
+    return quicksort(maiores) + [pivo] + quicksort(menores)
+
+print(quicksort([10, 5, 2, 3]))
+```
+
 ## Complexidade do Quicksort
 
 A complexidade do Quicksort varia conforme a escolha do pivô e a distribuição dos dados. [Em média, o algoritmo apresenta uma complexidade de tempo $O(n log_2(n))$, considerada ideal. Esse desempenho ocorre quando o pivô divide o array em duas partes aproximadamente iguais]{.mark}, permitindo que cada chamada recursiva processe subarrays menores de forma eficiente.
@@ -546,12 +577,12 @@ lista_cep = ["13186642",
 ```{python}
 import requests
 def cotar(data):
-  url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json"
-  res = requests.get(url)
-  res = res.json()
-  return res['value'][0]['cotacaoVenda']
+    url = fr"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra"
+    res = requests.get(url)
+    res = res.json()
+    return res
 
-cotar("08282024")
+cotar("08-28-2024")
 ```
 
 \
@@ -596,9 +627,9 @@ Nos dias *não úteis* a API retorna uma lista vazia na chave `value`
 
 
 ```{python}
-data = "09012024"
+data = "09-01-2024"
 
-url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao='{data}'&%24format=json"
+url = fr"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra"
 res = requests.get(url)
 res = res.json()
 print(res)
@@ -612,17 +643,17 @@ print(res)
 import requests
 
 def cotar(data):
-  url = fr"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$format=json"
+  url = fr"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='{data}'&$top=100&$format=json&$select=cotacaoCompra"
   res = requests.get(url)
   res = res.json()
   if res['value']: 
-    return res['value'][0]['cotacaoVenda']
+    return res['value'][0]['cotacaoCompra']
   else:
-    dia_anterior = datetime.strptime(data, "%m%d%Y") - timedelta(1)
-    dia_anterior = datetime.strftime(dia_anterior, "%m%d%Y")
+    dia_anterior = datetime.strptime(data, "%m-%d-%Y") - timedelta(1)
+    dia_anterior = datetime.strftime(dia_anterior, "%m-%d-%Y")
     return cotar(dia_anterior)
 
-[cotar(i) for i in ["09022024", "09012024", "08312024", "08302024", "08292024"]]
+[cotar(i) for i in ["09-02-2024", "09-01-2024", "08-31-2024", "08-30-2024", "08-29-2024"]]
 ```
 
 ## Monitoramento da frota de ônibus
@@ -745,7 +776,7 @@ paradas[:3]  # <2>
 
 ### Utilizando `folium` para construir mapas
 
-```{python}
+```{.python}
 from folium import Map, Marker, Popup
 
 m = Map(location=[-22.8773542,-47.2280647], zoom_start=14)
