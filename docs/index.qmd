@@ -430,7 +430,12 @@ Complexidade O($n^2$): O algoritmo precisa percorrer todos os elementos em cada 
 
 > [Recursividade]{.blue} é um mecanismo de programação que permite que uma função ou objeto se refira a si mesmo. Em outras palavras, uma função recursiva é uma função que se define em termos de si mesma.
 
+
 ## Fatorial
+
+::: columns
+::: column
+### Fatorial com recursividade
 
 \
 
@@ -444,8 +449,10 @@ def factorial(n):
 
 factorial(5)
 ```
+:::
 
-## Fatorial com `for`
+::: column
+### Fatorial com `for`
 
 \
 
@@ -458,6 +465,26 @@ def factorial_com_for(n):
 
 factorial_com_for(5)
 ```
+:::
+:::
+
+Com a recursividade
+
+- Código mais limpo: Funções recursivas costumam ser mais curtas e fáceis de ler do que estruturas de repetição longas.
+- Tradução direta da lógica: Facilita a aplicação de conceitos matemáticos e algoritmos de "dividir para conquistar", como a ordenação (veremos mais na frente).
+
+## Problemas com recursividade {.smaller}
+
+```{python}
+#| error: true
+import sys
+sys.setrecursionlimit(1000) # existe um limíte padrão para quão profunda uma recursão poderá ir.
+
+factorial(1000)
+```
+## *Tail Call Optimization*
+
+A [otimização de chamada de cauda]{.blue} (conhecida em inglês como Tail Call Optimization ou TCO) é uma técnica avançada que permite o desenvolvimento de funções recursivas altamente eficientes e seguras.Em estruturas de programação tradicionais, cada vez que uma função chama a si mesma, o sistema reserva um novo espaço na memória (chamado de stack frame) para processar essa subrotina. [Quando a recursão é muito profunda, esse acúmulo esgota a memória disponível, causando o famoso erro de estouro de pilha]{.mark} ([*stack overflow*]{.blue}).Existem soluções de Tail Call Optimization projetadas especificamente para resolver esse problema. [Para que a otimização aconteça, o código deve ser escrito de forma que a chamada recursiva seja a última ação exata da função.]{.mark} Quando essa regra é seguida, o compilador ou o interpretador da linguagem de programação aplica o TCO: em vez de criar um novo bloco de memória, ele simplesmente reutiliza o espaço da função atual.Muitas linguagens modernas e ambientes de execução oferecem suporte nativo ou soluções alternativas para o TCO (Haskell, Elixir e Erlang são alguns exemplos).
 
 ## Fibonacci
 
