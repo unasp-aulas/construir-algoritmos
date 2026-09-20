@@ -53,7 +53,7 @@
     "href": "docs/index.html#tupla",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Tupla",
-    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[68], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Tupla\n\n\n\nUma tupla é uma coleção ordenada e imutável de itens, semelhante a uma lista, mas cujos elementos não podem ser alterados, adicionados ou removidos após sua criação. É uma estrutura de dados útil para agrupar informações relacionadas, como coordenadas de um ponto (x, y), e é representada por valores separados por vírgulas, geralmente entre parênteses.\n\n\ntupla = (1, 2, 3, 4, 5)\ntupla[3] = 2.9\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[2], line 2\n      1 tupla = (1, 2, 3, 4, 5)\n----&gt; 2 tupla[3] = 2.9\n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "docs/index.html#dicionário",
@@ -144,14 +144,21 @@
     "href": "docs/index.html#fatorial",
     "title": "Construção de Algorítmos e  Programação",
     "section": "Fatorial",
-    "text": "Fatorial\n\n\n\ndef factorial(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return n * factorial(n - 1)\n\nfactorial(5)\n\n120"
+    "text": "Fatorial\n\n\nFatorial com recursividade\n\n\n\ndef factorial(n):\n  if n &lt;= 1:\n    return 1\n  else:\n    return n * factorial(n - 1)\n\nfactorial(5)\n\n120\n\n\n\nFatorial com for\n\n\n\ndef factorial_com_for(n):\n  prod = 1\n  for i in range(1, n + 1):\n    prod *= i\n  return prod\n\nfactorial_com_for(5)\n\n120\n\n\n\nCom a recursividade\n\nCódigo mais limpo: Funções recursivas costumam ser mais curtas e fáceis de ler do que estruturas de repetição longas.\nTradução direta da lógica: Facilita a aplicação de conceitos matemáticos e algoritmos de “dividir para conquistar”, como a ordenação (veremos mais na frente)."
   },
   {
-    "objectID": "docs/index.html#fatorial-com-for",
-    "href": "docs/index.html#fatorial-com-for",
+    "objectID": "docs/index.html#problemas-com-recursividade",
+    "href": "docs/index.html#problemas-com-recursividade",
     "title": "Construção de Algorítmos e  Programação",
-    "section": "Fatorial com for",
-    "text": "Fatorial com for\n\n\n\ndef factorial_com_for(n):\n  prod = 1\n  for i in range(1, n + 1):\n    prod *= i\n  return prod\n\nfactorial_com_for(5)\n\n120"
+    "section": "Problemas com recursividade",
+    "text": "Problemas com recursividade\n\nimport sys\nsys.setrecursionlimit(1000) # existe um limíte padrão para quão profunda uma recursão poderá ir.\n\nfactorial(1000)\n\n\n---------------------------------------------------------------------------\nRecursionError                            Traceback (most recent call last)\nCell In[11], line 4\n      1 import sys\n      2 sys.setrecursionlimit(1000) # existe um limíte padrão para quão profunda uma recursão poderá ir.\n----&gt; 4 factorial(1000)\n\nCell In[9], line 5, in factorial(n)\n      3   return 1\n      4 else:\n----&gt; 5   return n * factorial(n - 1)\n\nCell In[9], line 5, in factorial(n)\n      3   return 1\n      4 else:\n----&gt; 5   return n * factorial(n - 1)\n\n    [... skipping similar frames: factorial at line 5 (968 times)]\n\nCell In[9], line 5, in factorial(n)\n      3   return 1\n      4 else:\n----&gt; 5   return n * factorial(n - 1)\n\nCell In[9], line 2, in factorial(n)\n      1 def factorial(n):\n----&gt; 2   if n &lt;= 1:\n      3     return 1\n      4   else:\n\nRecursionError: maximum recursion depth exceeded in comparison"
+  },
+  {
+    "objectID": "docs/index.html#tail-call-optimization",
+    "href": "docs/index.html#tail-call-optimization",
+    "title": "Construção de Algorítmos e  Programação",
+    "section": "Tail Call Optimization",
+    "text": "Tail Call Optimization\nA otimização de chamada de cauda (conhecida em inglês como Tail Call Optimization ou TCO) é uma técnica avançada que permite o desenvolvimento de funções recursivas altamente eficientes e seguras.Em estruturas de programação tradicionais, cada vez que uma função chama a si mesma, o sistema reserva um novo espaço na memória (chamado de stack frame) para processar essa subrotina. Quando a recursão é muito profunda, esse acúmulo esgota a memória disponível, causando o famoso erro de estouro de pilha (stack overflow).Existem soluções de Tail Call Optimization projetadas especificamente para resolver esse problema. Para que a otimização aconteça, o código deve ser escrito de forma que a chamada recursiva seja a última ação exata da função. Quando essa regra é seguida, o compilador ou o interpretador da linguagem de programação aplica o TCO: em vez de criar um novo bloco de memória, ele simplesmente reutiliza o espaço da função atual.Muitas linguagens modernas e ambientes de execução oferecem suporte nativo ou soluções alternativas para o TCO (Haskell, Elixir e Erlang são alguns exemplos)."
   },
   {
     "objectID": "docs/index.html#fibonacci",
