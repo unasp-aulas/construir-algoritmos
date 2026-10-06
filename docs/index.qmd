@@ -11,11 +11,10 @@ format:
     height: 900
     footer: "[github.com/unasp-aulas/construir-algoritmos](https://github.com/unasp-aulas/construir-algoritmos)"
     mermaid-format: svg
-  html:
-    filters:
-      - shinylive
 html-math-method: mathjax
 code-annotations: hover
+filters:
+  - shinylive
 embed-resources: false
 ipynb-shell-interactivity: all
 execute: 
@@ -1184,7 +1183,7 @@ $$
 
 ```{shinylive-python}
 #| standalone: true
-#| viewerHeight: 600
+#| viewerHeight: 500
 #| components: viewer
 
 import numpy as np
@@ -1196,7 +1195,7 @@ x = np.array([-2, -2, -1, -1, 0, 0, 1, 1, 2, 2])
 y = np.array([0, 0, 2, 3, 4, 4, 5, 6, 8, 8])
 
 app_ui = ui.page_fluid(
-    ui.input_slider("slope", "Slope", min=0, max=5, value=2, step=0.1),
+    ui.input_slider("slope", "Slope", min=-5, max=5, value=2, step=0.1),
     ui.input_slider("intercept", "Intercept", min=0, max=10, value=4, step=0.1),
     ui.output_ui("plot_output"),
 )
