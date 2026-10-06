@@ -11,6 +11,9 @@ format:
     height: 900
     footer: "[github.com/unasp-aulas/construir-algoritmos](https://github.com/unasp-aulas/construir-algoritmos)"
     mermaid-format: svg
+  html:
+    filters:
+      - shinylive
 html-math-method: mathjax
 code-annotations: hover
 embed-resources: false
@@ -1179,26 +1182,37 @@ $$
 :::
 ::: {.column}
 
-```{python}
-#| echo: false
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 600
+#| components: viewer
+
 import numpy as np
-import pandas as pd
-from plotnine import (
-  ggplot, aes, geom_point, geom_smooth, geom_abline, theme, element_text
+import plotly.graph_objects as go
+from shiny import App, render, ui
+
+# Dados
+x = np.array([-2, -2, -1, -1, 0, 0, 1, 1, 2, 2])
+y = np.array([0, 0, 2, 3, 4, 4, 5, 6, 8, 8])
+
+app_ui = ui.page_fluid(
+    ui.input_slider("slope", "Slope", min=0, max=5, value=2, step=0.1),
+    ui.input_slider("intercept", "Intercept", min=0, max=10, value=4, step=0.1),
+    ui.output_ui("plot_output"),
 )
-df = {"x": [-2, -2, -1, -1, 0, 0, 1, 1, 2, 2], "y": [0, 0, 2, 3, 4, 4, 5, 6, 8, 8]}
-(
-  ggplot(pd.DataFrame(df), aes("x", "y"))
-  + geom_point()
-  + geom_smooth(method="lm", formula="y~x", se=False)
-  + geom_abline(intercept=4, slope=2.1)
-  + geom_abline(intercept=4.2, slope=2.3)
-  + geom_abline(intercept=3.7, slope=1.7)
-  + theme(text = element_text(
-        size = 22,
-        family = "IBM Plex Sans"
-    ))
-)
+
+def server(input, output, session):
+    @render.ui
+    def plot_output():
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=x, y=y, mode='markers', name='Dados'))
+        x_range = np.linspace(-3, 3, 100)
+        y_line = input.slope() * x_range + input.intercept()
+        fig.add_trace(go.Scatter(x=x_range, y=y_line, mode='lines', name='Regressão'))
+        fig.update_layout(title="Regressão Linear", xaxis_title="x", yaxis_title="y")
+        return ui.HTML(fig.to_html(full_html=False))
+
+app = App(app_ui, server)
 ```
 :::
 :::
