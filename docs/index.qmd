@@ -1036,19 +1036,12 @@ $$
 
 \
 
+::: columns
+::: {.column}
 Matriz pode ser definida como uma lista de listas
 
 ```{python}
-[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-```
-
-\
-
-Criando uma matriz com [*list comprehension*]{.blue}
-
-```{python}
-matrix = [[column for column in range(4)] for row in range(4)]
-print(matrix)
+A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 ```
 
 \
@@ -1056,8 +1049,19 @@ print(matrix)
 Acessando os valores de uma matrix
 
 ```{python}
-matrix[2][3]
+A[2][1]
 ```
+:::
+::: {.column} 
+Percorrendo uma matriz
+
+```{python}
+for i in range(len(A)):
+    for j in range(len(A)):
+        print(A[i][j])
+```
+:::
+:::
 
 ## Matriz em python
 
