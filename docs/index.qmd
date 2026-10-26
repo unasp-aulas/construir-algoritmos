@@ -1327,3 +1327,67 @@ from pickle import load
 with open('data.pickle', 'rb') as f:
   data = load(f)
 ```
+
+# Pandas
+
+> A biblioteca [Pandas]{.blue} é a ferramenta fundamental em Python para a manipulação e análise de dados. Ela introduz a estrutura de dados [DataFrame]{.blue}, que funciona de forma semelhante a uma planilha do Excel, mas com o poder e a flexibilidade da programação.
+
+## Primeiros passos com Pandas
+
+\
+
+O `pandas` permite ler facilmente arquivos como CSV, Excel e bases SQL. Vamos utilizar um conjunto de dados de funcionários para realizar algumas análises.
+
+```{python}
+import pandas as pd
+import io
+
+csv_data = """
+nome,idade,nivel,salario,anos_empresa
+Ana Silva,23,Junior,3500.00,1
+Bruno Costa,28,Pleno,7200.00,3
+Carla Oliveira,35,Senior,14500.00,7
+Daniel Santos,22,Junior,3200.00,1
+Eduardo Lima,41,Senior,18000.00,12
+Fernanda Souza,30,Pleno,8500.00,4
+Gabriel Rocha,25,Junior,4000.00,2
+Helena Alves,38,Senior,16000.00,9
+Igor Pereira,27,Pleno,6800.00,3
+Juliana Ferreira,24,Junior,3800.00,1
+Lucas Martins,33,Senior,13500.00,6
+Mariana Barbosa,29,Pleno,7900.00,4
+Nicolas Gomez,22,Junior,3100.00,0
+Patricia Ribeiro,45,Senior,21000.00,15
+Rafael Carvalho,31,Pleno,8200.00,5
+Sofia Fernandes,26,Junior,4200.00,2
+Thiago Dias,36,Senior,15200.00,8
+Vanessa Castro,28,Pleno,7500.00,3
+Wagner Mendes,24,Junior,3600.00,1
+Yasmin Ramos,40,Senior,17500.00,11
+"""
+
+# Carregamento do CSV a partir da string
+df = pd.read_csv(io.StringIO(csv_data))
+```
+
+## Analisando dados
+
+\
+
+Com o `pandas`, podemos agrupar dados, calcular estatísticas e filtrar informações com poucos comandos.
+
+```{python}
+# Média salarial por nível
+df.groupby('nivel')['salario'].mean().round(2)
+```
+
+## Analisando dados
+
+\
+
+```{python}
+# Estatísticas Descritivas
+print(df.describe().round(2))
+```
+
+
