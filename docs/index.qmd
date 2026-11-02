@@ -922,7 +922,7 @@ from dotenv import load_dotenv
 load_dotenv(".env")
 updates = requests.get(f"https://api.telegram.org/bot{os.getenv('TELEGRAM_TOKEN')}/getUpdates")
 updates = updates.json()
-updates["result"][-1]
+print(updates["result"][-1])
 ```
 
 ```
@@ -1364,6 +1364,36 @@ Thiago Dias,36,Senior,15200.00,8
 Vanessa Castro,28,Pleno,7500.00,3
 Wagner Mendes,24,Junior,3600.00,1
 Yasmin Ramos,40,Senior,17500.00,11
+Alexandre Freitas,29,Pleno,8000.00,4
+Beatriz Cardoso,23,Junior,3400.00,1
+Camila Teixeira,34,Senior,14000.00,7
+Diego Correia,27,Junior,4300.00,2
+Elisa Machado,32,Pleno,9000.00,5
+Fabio Vieira,48,Senior,22500.00,18
+Gabriela Marques,25,Junior,3900.00,1
+Hugo Duarte,37,Senior,16800.00,10
+Isabela Araujo,30,Pleno,8300.00,4
+Joao Pedro Nunes,23,Junior,3300.00,1
+Karen Santana,39,Senior,17000.00,9
+Leonardo Farias,28,Pleno,7100.00,3
+Maria Eduard Cavalcanti,22,Junior,3000.00,0
+Natalia Moreira,31,Pleno,8700.00,5
+Otavio Monteiro,43,Senior,19500.00,14
+Paula Peixoto,26,Junior,4100.00,2
+Quentin Rossi,29,Pleno,7600.00,3
+Renata Prado,36,Senior,15800.00,8
+Sergio Nogueira,24,Junior,3700.00,1
+Tatiana Borges,33,Pleno,9200.00,6
+Ulysses Guimaraes,52,Senior,24000.00,20
+Valeria Barros,25,Junior,4000.00,2
+William Matos,30,Pleno,8100.00,4
+Xavier Pinto,22,Junior,3250.00,1
+Yara Lopes,38,Senior,16500.00,9
+Zeca Pagodinho,46,Senior,21500.00,16
+Arthur Aguiar,27,Junior,4400.00,2
+Bruna Marquezine,32,Pleno,8800.00,5
+Caio Castro,35,Senior,14800.00,7
+Debora Secco,28,Pleno,7700.00,3
 """
 
 # Carregamento do CSV a partir da string
@@ -1390,4 +1420,20 @@ df.groupby('nivel')['salario'].mean().round(2)
 print(df.describe().round(2))
 ```
 
+## Analisando dados
+
+\
+
+```{python}
+# Média Salarial e Idade por Nível
+agrupado_nivel = df.groupby('nivel').agg(
+    qtd=('nome', 'count'),
+    salario_medio=('salario', 'mean'),
+    salario_min=('salario', 'min'),
+    salario_max=('salario', 'max'),
+    idade_media=('idade', 'mean'),
+    anos_empresa_medio=('anos_empresa', 'mean')
+).round(2)
+agrupado_nivel
+```
 
